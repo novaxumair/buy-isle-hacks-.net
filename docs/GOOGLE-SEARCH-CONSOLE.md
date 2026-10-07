@@ -58,7 +58,7 @@ Google **stops retrying** a sitemap after repeated failures. The summary card ca
 npm run verify:live-sitemap
 ```
 
-Both `https://buyislehacks.net/sitemap` and `https://buyislehacks.net/sitemap.xml` must return **HTTP 200** and **`Content-Type: application/xml`**.
+Both `https://buyislehacks.net/sitemap.xml` (submit this in GSC) and `/sitemap` must return **HTTP 200** for **GET and HEAD** with **`Content-Type: application/xml`**. A **500 on HEAD** (common after enabling `run_worker_first` without a HEAD fix) breaks “Test live URL” and sitemap status.
 
 Browser check: [https://buyislehacks.net/sitemap.xml](https://buyislehacks.net/sitemap.xml) — XML, not HTML.
 

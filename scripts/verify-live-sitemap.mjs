@@ -2,10 +2,8 @@
  * Post-deploy check: production sitemap must be fetchable like Google Search Console.
  * Usage: npm run verify:live-sitemap
  */
-const CANONICAL = (process.env.SITEMAP_URL || 'https://buyislehacks.net/sitemap').replace(/\/$/, '')
-const ALIAS = CANONICAL.endsWith('.xml')
-  ? CANONICAL.replace(/\/sitemap\.xml$/, '/sitemap')
-  : `${CANONICAL.replace(/\/sitemap$/, '')}/sitemap.xml`
+const SITEMAP_XML = (process.env.SITEMAP_URL || 'https://buyislehacks.net/sitemap.xml').replace(/\/$/, '')
+const SITEMAP_EXTLESS = SITEMAP_XML.replace(/\/sitemap\.xml$/, '/sitemap')
 
 const GOOGLEBOT =
   'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
@@ -60,6 +58,21 @@ async function check(label, url) {
   return { locCount, bytes: body.length }
 }
 
+async function checkHead(url) {
+  const res = await fetch(url, {
+    method: 'HEAD',
+    redirect: 'manual',
+    headers: { 'User-Agent': GOOGLEBOT, Accept: 'application/xml,text/xml,*/*' },
+  })
+  if (!res.ok) {
+    throw new Error(`HEAD: HTTP ${res.status} for ${url} (Worker must not return 500 on HEAD — breaks GSC/curl -I)`)
+  }
+  const contentType = res.headers.get('content-type') || ''
+  if (!/application\/xml/i.test(contentType)) {
+    throw new Error(`HEAD: expected application/xml, got "${contentType}" (${url})`)
+  }
+}
+
 /** Worker `workers/site.js` must run on www so crawlers get a single apex host. */
 async function checkWorkerRoutes() {
   const res = await fetch('https://www.buyislehacks.net/', {
@@ -77,14 +90,16 @@ async function checkWorkerRoutes() {
 
 try {
   await checkWorkerRoutes()
-  const primary = await check('sitemap', CANONICAL)
-  await check('sitemap.xml', ALIAS)
-  console.log(`Live sitemap OK: ${primary.locCount} URLs, ${primary.bytes} bytes (${CANONICAL} + ${ALIAS}, both HTTP 200)`)
+  await checkHead(SITEMAP_XML)
+  const primary = await check('sitemap.xml', SITEMAP_XML)
+  await check('sitemap', SITEMAP_EXTLESS)
   console.log(
-    'GSC: remove failed rows (especially https://www.buyislehacks.net/sitemap.xml), submit https://buyislehacks.net/sitemap.xml on a buyislehacks.net property — not URL Inspection.',
+    `Live sitemap OK: ${primary.locCount} URLs, ${primary.bytes} bytes (${SITEMAP_XML} + ${SITEMAP_EXTLESS}, GET + HEAD)`,
+  )
+  console.log(
+    'GSC: remove failed rows, submit https://buyislehacks.net/sitemap.xml on a buyislehacks.net property — not URL Inspection.',
   )
 } catch (err) {
   console.error(String(err.message || err))
   process.exit(1)
 }
-
