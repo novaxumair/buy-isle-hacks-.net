@@ -67,46 +67,35 @@ function toApexUrl(url) {
 
 const SITEMAP_HEADERS = {
   'content-type': 'application/xml; charset=utf-8',
-  'cache-control': 'public, max-age=3600',
+  'cache-control': 'public, max-age=600, must-revalidate',
   'x-content-type-options': 'nosniff',
 }
 
-/** ASSETS HEAD responses have no body — never validate XML on HEAD (GSC/curl -I must be 200). */
-async function loadSitemapAsset(env, request, assetPath) {
-  const getReq = new Request(new URL(assetPath, 'https://assets.local'), {
-    method: 'GET',
+/** Stream dist sitemap bytes (build-time validated). HEAD must stay 200 for GSC/curl -I. */
+async function serveSitemapBytes(env, request, assetPath) {
+  const assetUrl = new URL(assetPath, 'https://assets.local')
+  const assetReq = new Request(assetUrl, {
+    method: request.method === 'HEAD' ? 'HEAD' : 'GET',
     headers: request.headers,
   })
-  const asset = await env.ASSETS.fetch(getReq)
-  if (!asset.ok) return { error: new Response('Sitemap unavailable', { status: 503 }) }
-  const body = await asset.text()
-  if (!body.trimStart().startsWith('<?xml')) {
-    return { error: new Response('Invalid sitemap', { status: 500 }) }
+  const asset = await env.ASSETS.fetch(assetReq)
+  if (!asset.ok) {
+    return new Response('Sitemap unavailable', { status: 503 })
   }
-  return { body }
+  if (request.method === 'HEAD') {
+    return new Response(null, { status: 200, headers: SITEMAP_HEADERS })
+  }
+  return new Response(asset.body, { status: 200, headers: SITEMAP_HEADERS })
 }
 
 async function serveSitemap(env, request, pathname) {
   const assetPath =
     pathname === '/sitemap' ? '/sitemap' : pathname === '/google-sitemap.xml' ? '/google-sitemap.xml' : '/sitemap.xml'
-  const loaded = await loadSitemapAsset(env, request, assetPath)
-  if (loaded.error) return loaded.error
-  if (request.method === 'HEAD') {
-    return new Response(null, { status: 200, headers: SITEMAP_HEADERS })
-  }
-  return new Response(loaded.body, { status: 200, headers: SITEMAP_HEADERS })
+  return serveSitemapBytes(env, request, assetPath)
 }
 
 async function serveSitemapIndex(env, request) {
-  const loaded = await loadSitemapAsset(env, request, '/sitemap-index.xml')
-  if (loaded.error) return loaded.error
-  if (!loaded.body.includes('<sitemapindex')) {
-    return new Response('Invalid sitemap index', { status: 500 })
-  }
-  if (request.method === 'HEAD') {
-    return new Response(null, { status: 200, headers: SITEMAP_HEADERS })
-  }
-  return new Response(loaded.body, { status: 200, headers: SITEMAP_HEADERS })
+  return serveSitemapBytes(env, request, '/sitemap-index.xml')
 }
 
 const SITEMAP_PATHS = new Set(['/sitemap', '/sitemap.xml', '/google-sitemap.xml'])

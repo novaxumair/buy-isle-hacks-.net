@@ -83,4 +83,22 @@ if (result.signal) {
   process.exit(1)
 }
 
-process.exit(result.status ?? 1)
+const status = result.status ?? 1
+if (status === 0) {
+  console.log('cf-worker-deploy: verifying live sitemap (GET + HEAD) for Google Search Console…')
+  const liveCheck = join(root, 'scripts', 'verify-live-sitemap.mjs')
+  const check = spawnSync(process.execPath, [liveCheck], {
+    cwd: root,
+    stdio: 'inherit',
+    env,
+    timeout: 120_000,
+  })
+  if ((check.status ?? 1) !== 0) {
+    console.error(
+      'cf-worker-deploy: live sitemap check failed — purge Cloudflare cache for /sitemap.xml then resubmit in GSC.',
+    )
+    process.exit(check.status ?? 1)
+  }
+}
+
+process.exit(status)

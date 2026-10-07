@@ -304,8 +304,8 @@ if (existsSync(join(dist, '_routes.json'))) {
 }
 
 const robots = readFileSync(join(dist, 'robots.txt'), 'utf8')
-if (!robots.includes('Sitemap: https://buyislehacks.net/sitemap-index.xml')) {
-  fail('robots.txt must point at https://buyislehacks.net/sitemap-index.xml')
+if (!robots.includes('Sitemap: https://buyislehacks.net/sitemap.xml')) {
+  fail('robots.txt must point at https://buyislehacks.net/sitemap.xml (GSC submit URL)')
 }
 if (!robots.includes('Allow: /sitemap')) {
   fail('robots.txt must explicitly allow /sitemap')

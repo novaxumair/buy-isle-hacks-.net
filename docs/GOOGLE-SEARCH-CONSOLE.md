@@ -131,5 +131,5 @@ After deploy, `https://www.buyislehacks.net/` must **301** to `https://buyisleha
 Common causes:
 
 1. **Wrong Search Console property** — `https://www.buyislehacks.net/` with a sitemap whose `<loc>` URLs are all **apex** → **0 discovered pages** / “could not be read”. Use **Domain** `buyislehacks.net` or URL prefix **`https://buyislehacks.net/`**, then submit **`https://buyislehacks.net/sitemap.xml`**.
-2. **Stale failed row** — remove the sitemap in GSC and submit again after deploy (`wrangler.worker.toml` uses `run_worker_first = true` so **www → apex 301** actually runs).
+2. **Stale failed row** — Google keeps showing **Couldn’t fetch** / **Could not be read** on an old submission even after the site is fixed. **Remove** the row (⋮ → Remove sitemap), wait 2 minutes, submit **`https://buyislehacks.net/sitemap.xml`** again. Do not resubmit without removing first.
 3. **WAF 403** for Googlebot on `/sitemap.xml` — see Security → Events above.
