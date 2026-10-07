@@ -46,7 +46,17 @@ if (onCloudflareBuild && !hasToken) {
 // Build already ran in dashboard (wrangler.worker.toml has no [build] — Wrangler 4 has no --no-build).
 const wranglerArgs = ['deploy', '-c', 'wrangler.worker.toml']
 
-console.log(`Worker deploy → buyislehacks-net (${dist})`)
+// Routes require buyislehacks.net as a proxied zone on the deploy account (CI often lacks this).
+if (process.env.CF_WORKER_ATTACH_ROUTES === '1') {
+  wranglerArgs.push('--route', 'buyislehacks.net/*', '--route', 'www.buyislehacks.net/*')
+  console.log('cf-worker-deploy: attaching Worker routes (CF_WORKER_ATTACH_ROUTES=1)')
+} else if (onCloudflareBuild) {
+  console.log(
+    'cf-worker-deploy: skipping routes (zone not required). Add Custom domain in Workers dashboard when the zone is ready.',
+  )
+}
+
+console.log(`Worker deploy → buy-isle-hacks--net (${dist})`)
 console.log(`cf-worker-deploy: node wrangler.js ${wranglerArgs.join(' ')}`)
 
 const env = {

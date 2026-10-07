@@ -71,7 +71,7 @@ async function checkWorkerRoutes() {
     if (loc.includes('buyislehacks.net') && !loc.includes('www.')) return
   }
   console.warn(
-    'Warning: www.buyislehacks.net does not 301 to apex — redeploy Worker (wrangler.worker.toml routes) or add dashboard routes for buyislehacks-net.',
+    'Warning: www.buyislehacks.net does not 301 to apex — attach buyislehacks.net + www to Worker buy-isle-hacks--net (Domains & routes).',
   )
 }
 

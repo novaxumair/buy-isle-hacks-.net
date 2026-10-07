@@ -1,6 +1,7 @@
 # Deploy on Cloudflare **Worker** (static assets)
 
-This site is served by Worker **`buyislehacks-net`** (`workers/site.js` + `dist/` assets).  
+This site is served by Worker **`buy-isle-hacks--net`** (`workers/site.js` + `dist/` assets).  
+The name in **`wrangler.worker.toml`** must match your Git-connected Workers Builds project.  
 Pages Functions in `/functions` are **not** used on this path — sitemap comes from `dist/sitemap.xml` via the Worker.
 
 ## npm scripts
@@ -19,7 +20,7 @@ Requires `CLOUDFLARE_API_TOKEN` (Workers Scripts Edit) or `wrangler login`.
 
 ## Cloudflare dashboard (Workers Builds / Git)
 
-**Workers & Pages → Workers → buyislehacks-net → Settings → Builds**
+**Workers & Pages → Workers → buy-isle-hacks--net → Settings → Builds**
 
 | Setting | Value |
 |---------|--------|
@@ -41,10 +42,18 @@ Or leave deploy empty and set only:
 
 Large first uploads (videos/media in `dist/`) can take **5–15 minutes** — watch for upload progress lines after the fix above.
 
+### Deploy error: `Could not find zone for buyislehacks.net`
+
+Git deploy **skips routes** so the Worker upload can finish even if the domain is not on the account yet.
+
+1. Add **`buyislehacks.net`** to Cloudflare (nameservers proxied).
+2. **Workers → buy-isle-hacks--net → Settings → Domains & routes → Add** → `buyislehacks.net` and `www.buyislehacks.net` (Worker 301s www → apex in `workers/site.js`).
+3. Optional: set build variable **`CF_WORKER_ATTACH_ROUTES=1`** to attach `buyislehacks.net/*` routes on each deploy via Wrangler.
+
 ## Custom domain
 
-1. **Workers & Pages → Workers → buyislehacks-net → Settings → Domains & routes**
-2. Routes are in **`wrangler.worker.toml`** (`buyislehacks.net/*` + `www.buyislehacks.net/*`) and are applied on **`npm run deploy:worker`**. Worker 301s www → apex.
+1. **Workers & Pages → Workers → buy-isle-hacks--net → Settings → Domains & routes**
+2. Add **`buyislehacks.net`** (and **`www`**) after the zone is on this account — routes are **not** in `wrangler.worker.toml` by default (avoids failed CI deploys).
 3. **Do not** attach the same hostname to a **Pages** project at the same time.
 
 ## After deploy

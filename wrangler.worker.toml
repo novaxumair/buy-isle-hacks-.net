@@ -1,19 +1,14 @@
-# Cloudflare Worker + static assets (dist/). Custom domain: attach route buyislehacks.net/*
+# Cloudflare Worker + static assets (dist/). Custom domain: Workers dashboard → Domains & routes
+# (after buyislehacks.net is a proxied zone on this account). See docs/CLOUDFLARE-WORKER.md.
 # Local / CI: npm run build && npm run deploy:worker
-# Dashboard (Workers Builds): Build command = npm run build | Deploy = npm run deploy:worker
-# Do not also connect the same hostname to a Pages project (see docs/CLOUDFLARE-WORKER.md).
-name = "buyislehacks-net"
+# Dashboard (Workers Builds): Build = npm run build | Deploy = npm run deploy:worker
+# Worker name must match the Git-connected Workers Builds project (buy-isle-hacks--net).
+name = "buy-isle-hacks--net"
 compatibility_date = "2024-09-23"
 main = "workers/site.js"
 
-# Attach Worker on deploy (www → apex + correct sitemap headers). Requires zone on this account.
-[[routes]]
-pattern = "buyislehacks.net/*"
-zone_name = "buyislehacks.net"
-
-[[routes]]
-pattern = "www.buyislehacks.net/*"
-zone_name = "buyislehacks.net"
+# Routes are NOT in this file — Wrangler fails deploy if the zone is missing on the account.
+# Optional: set build env CF_WORKER_ATTACH_ROUTES=1 once buyislehacks.net is on Cloudflare.
 
 # Build is always `npm run build` before deploy (dashboard or npm run deploy).
 # Do not add [build] here — Wrangler 4 would run it again on deploy.

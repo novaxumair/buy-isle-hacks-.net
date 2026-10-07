@@ -104,7 +104,7 @@ https://buyislehacks.net/google-sitemap.xml
 
 ### 4. Worker must be on the domain
 
-After deploy, `https://www.buyislehacks.net/` must **301** to `https://buyislehacks.net/`. If both return **200**, add routes for Worker **`buyislehacks-net`** or redeploy so `wrangler.worker.toml` routes apply.
+After deploy, `https://www.buyislehacks.net/` must **301** to `https://buyislehacks.net/`. If both return **200**, attach **`buyislehacks.net`** and **`www`** to Worker **`buy-isle-hacks--net`** (Domains & routes).
 
 ---
 
@@ -112,7 +112,7 @@ After deploy, `https://www.buyislehacks.net/` must **301** to `https://buyisleha
 
 1. Confirm you used the **full URL** on a **Domain** property (see above).
 2. **Cloudflare → Security → Events** — filter `/sitemap.xml`, user-agent Google. Fix **403** with a WAF skip for verified bots on `/sitemap.xml` and `/robots.txt`.
-3. **Workers & Pages → Worker `buyislehacks-net`** — routes `buyislehacks.net/*` and `www.buyislehacks.net/*` (deploy applies routes from `wrangler.worker.toml`).
+3. **Workers & Pages → Worker `buy-isle-hacks--net`** — custom domains `buyislehacks.net` and `www.buyislehacks.net` (dashboard or `CF_WORKER_ATTACH_ROUTES=1` on deploy).
 4. **Caching → Purge** → `/sitemap.xml` and `/sitemap`.
 5. Open the **sitemap row details** (not only the summary card) and read the specific error under the red message.
 
