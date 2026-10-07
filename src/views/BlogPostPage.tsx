@@ -9,6 +9,7 @@ import { SITE_HOST } from '../data/site'
 import { getForumMedia } from '../data/media'
 import { getForumReplies } from '../data/forum-replies'
 import { NotFoundPage } from './NotFoundPage'
+import { inlineMarkdownLinks } from '../lib/inline-links'
 
 type BlogPostPageProps = {
   slug: string
@@ -88,7 +89,7 @@ export function BlogPostPage({ slug }: BlogPostPageProps) {
                   </h2>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/55 sm:text-base">
                     {section.body.map((para) => (
-                      <p key={para.slice(0, 48)}>{para}</p>
+                      <p key={para.slice(0, 48)}>{inlineMarkdownLinks(para)}</p>
                     ))}
                   </div>
                 </section>
@@ -137,7 +138,7 @@ export function BlogPostPage({ slug }: BlogPostPageProps) {
                           </p>
                         ) : null}
                         <p className={`mt-2 text-sm leading-relaxed ${staff ? 'text-white/75' : 'text-white/60'}`}>
-                          {reply.body}
+                          {inlineMarkdownLinks(reply.body)}
                         </p>
                       </li>
                     )
@@ -148,10 +149,10 @@ export function BlogPostPage({ slug }: BlogPostPageProps) {
 
             <div className="page-card mt-12 rounded-2xl p-6 sm:p-8">
               <h2 className="text-lg font-semibold text-white">
-                Ready for Dota 2 Cheats?
+                Ready for The Isle Hacks?
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-white/55">
-                Check Active loader status, then continue to hero ESP, map hack, and timers on{' '}
+                Check Active loader status, then continue to player ESP, growth tracking, and survival overlays on{' '}
                 {SITE_HOST}. Need help? Read{' '}
                 <a href="/support" className="text-white/80 underline-offset-2 hover:underline">
                   support
@@ -164,7 +165,7 @@ export function BlogPostPage({ slug }: BlogPostPageProps) {
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
-                  href={guidePath('dota-2')}
+                  href={guidePath('the-isle')}
                   className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/5"
                 >
                   Product details

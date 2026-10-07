@@ -1,6 +1,6 @@
 # Deploy on Cloudflare **Worker** (static assets)
 
-This site is served by Worker **`buy-dota2-cheats--com`** (`workers/site.js` + `dist/` assets).  
+This site is served by Worker **`buyislehacks-net`** (`workers/site.js` + `dist/` assets).  
 Pages Functions in `/functions` are **not** used on this path — sitemap comes from `dist/sitemap.xml` via the Worker.
 
 ## npm scripts
@@ -19,7 +19,7 @@ Requires `CLOUDFLARE_API_TOKEN` (Workers Scripts Edit) or `wrangler login`.
 
 ## Cloudflare dashboard (Workers Builds / Git)
 
-**Workers & Pages → Workers → buy-dota2-cheats--com → Settings → Builds**
+**Workers & Pages → Workers → buyislehacks-net → Settings → Builds**
 
 | Setting | Value |
 |---------|--------|
@@ -33,7 +33,7 @@ Or leave deploy empty and set only:
 
 **Node:** match `.node-version` (22.x).
 
-### If deploy hangs after `Worker deploy → buydota2cheats-worker`
+### If deploy hangs after `Worker deploy → buyislehacks-worker`
 
 1. **API token** — In Builds settings, link a token with **Workers Scripts Edit** (+ **Account** read). Without it, Wrangler can sit waiting for login.
 2. **Account ID** — Add a build variable: **`CLOUDFLARE_ACCOUNT_ID`** = your Cloudflare account ID (dashboard URL: `dash.cloudflare.com/<account_id>`).
@@ -43,8 +43,8 @@ Large first uploads (videos/media in `dist/`) can take **5–15 minutes** — wa
 
 ## Custom domain
 
-1. **Workers & Pages → Workers → buy-dota2-cheats--com → Settings → Domains & routes**
-2. Routes are in **`wrangler.worker.toml`** (`buydota2cheats.com/*` + `www.buydota2cheats.com/*`) and are applied on **`npm run deploy:worker`**. Worker 301s www → apex.
+1. **Workers & Pages → Workers → buyislehacks-net → Settings → Domains & routes**
+2. Routes are in **`wrangler.worker.toml`** (`buyislehacks.net/*` + `www.buyislehacks.net/*`) and are applied on **`npm run deploy:worker`**. Worker 301s www → apex.
 3. **Do not** attach the same hostname to a **Pages** project at the same time.
 
 ## After deploy

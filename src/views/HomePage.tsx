@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, Eye, Map, Sparkles, Star, Swords } from 'lucide-react'
+import { ArrowRight, Droplets, Eye, Leaf, Sparkles, Star, Activity } from 'lucide-react'
 import { Navbar } from '../components/Navbar'
 import { SiteFooter } from '../components/SiteFooter'
 import { FaqSection } from '../components/FaqSection'
@@ -16,27 +16,27 @@ import { REVIEWS } from '../data/reviews'
 const FEATURES = [
   {
     icon: Eye,
-    label: 'Hero ESP',
-    desc: 'Items and level on enemy heroes — know who can burst before they show on your lane.',
-    href: articlePath('hero-esp-items-levels'),
+    label: 'Player ESP',
+    desc: 'Box, snapline, name, distance, species, and visible checks on nearby survivors.',
+    href: forumPath('player-esp-config'),
   },
   {
-    icon: Map,
-    label: 'Map hack',
-    desc: 'Remove fog of war for tactical awareness — pair with ward ESP for smarter rotations.',
-    href: articlePath('full-map-hack-fog-of-war'),
+    icon: Activity,
+    label: 'Growth & stamina',
+    desc: 'Health, stamina, growth, and corpse overlays for Isle Evrima pacing.',
+    href: forumPath('growth-stamina-tracking'),
   },
   {
-    icon: Clock,
-    label: 'Timers',
-    desc: 'Creep spawn, rune indicators, and roshan timer keep your farm and objective tempo honest.',
-    href: articlePath('rune-spawn-indicators'),
+    icon: Leaf,
+    label: 'Animal ESP',
+    desc: 'Track carnivores and herds with max distance tuning before you commit to a route.',
+    href: forumPath('features-list'),
   },
   {
-    icon: Swords,
-    label: 'Teamfight tools',
-    desc: 'Cooldown tracker, auto-dodge skillshots, and enemy inventory ESP for cleaner engagements.',
-    href: articlePath('ability-cooldown-tracker'),
+    icon: Droplets,
+    label: 'Water & fruit',
+    desc: 'Resource ESP plus fullbright and crosshair misc options for long survival sessions.',
+    href: forumPath('survival-esp-config'),
   },
 ] as const
 
@@ -44,7 +44,7 @@ const HOW_IT_WORKS = [
   {
     step: '01',
     title: 'Check loader status',
-    text: 'After Dota 2 patches we label builds Active or Updating on buydota2cheats.com — load only when Active matches your client.',
+    text: 'After The Isle patches we label builds Active or Updating on buyislehacks.net — load only when Active matches your client.',
   },
   {
     step: '02',
@@ -53,8 +53,8 @@ const HOW_IT_WORKS = [
   },
   {
     step: '03',
-    title: 'Configure ESP & timers first',
-    text: 'Enable hero ESP and ward placement, add creep/rune timers, save a profile, then tune map vision to readable opacity.',
+    title: 'Configure ESP first',
+    text: 'Enable player and animal ESP, set max distance and custom colors, save a profile, then add growth and stamina readouts.',
   },
 ] as const
 
@@ -76,20 +76,20 @@ export function HomePage({ part = 'full' }: HomePageProps) {
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
               <div className="max-w-xl lg:max-w-2xl">
                 <p className="mb-2.5 text-[11px] font-medium uppercase tracking-[0.18em] text-z-soft/80 sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
-                  Dota 2 · Steam · Windows PC
+                  The Isle · Evrima · Windows PC
                 </p>
-                <h1 className="text-[1.75rem] font-semibold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.65rem] lg:leading-[1.1]">
-                  Dota 2 <span className="text-dota-red">Cheats</span>
+                <h1 className="font-display text-[1.35rem] font-semibold uppercase leading-[1.2] tracking-[0.22em] text-[#e8e4dc] sm:text-[1.75rem] sm:tracking-[0.26em] lg:text-[2.1rem] lg:tracking-[0.28em]">
+                  {HOME_HEADINGS.h1}
                 </h1>
                 <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/70 sm:mt-3.5 sm:text-[0.95rem]">
-                  Buy Dota 2 cheats with hero ESP, full map hack, cooldown tracker, creep and rune
-                  timers, last-hit helper, and 24/7 support. Blog guides, forums, reviews, and loader
-                  status before you queue.
+                  Buy The Isle hacks with player, NPC, and animal ESP, growth and stamina tracking,
+                  water and fruit overlays, and Discord support. Intel blog, forums, reviews, and
+                  loader status before checkout.
                 </p>
 
                 <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:items-center">
                   <a
-                    href={guidePath('dota-2')}
+                    href={guidePath('the-isle')}
                     className="cta-gradient inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   >
                     Explore features
@@ -110,29 +110,29 @@ export function HomePage({ part = 'full' }: HomePageProps) {
                     <span className="text-sm font-semibold text-white">Patch-synced loader</span>
                   </div>
                   <p className="mt-2.5 text-xs leading-relaxed text-white/70 sm:mt-3 sm:text-sm">
-                    <span className="text-glow-active">Active</span> or Updating labels after Dota 2
-                    updates — VAC builds tracked before you load.
+                    <span className="text-glow-active">Active</span> or Updating labels after The Isle
+                    updates — EAC builds tracked before you load.
                   </p>
                 </div>
 
                 <div className="glass flex h-full min-h-[140px] flex-col rounded-2xl p-4 sm:min-h-[160px] sm:p-5">
                   <div className="mb-2.5 flex items-center gap-2 sm:mb-3">
                     <div className="flex h-5 w-5 items-center justify-center rounded bg-z-accent/30 text-[10px] font-bold text-z-soft sm:h-6 sm:w-6 sm:text-xs">
-                      D2
+                      TI
                     </div>
                     <span className="text-sm font-semibold text-white">From reviews</span>
                   </div>
                   <p className="flex-1 text-xs leading-relaxed text-white/80 sm:text-sm">
-                    “Rosh timer plus ward ESP cleaned up our mid-game calls — map hack opacity took
-                    five minutes to dial for trios.”
+                    “Growth and stamina ESP made nest decisions obvious — max distance took five
+                    minutes to dial on our Evrima server.”
                   </p>
                   <div className="mt-3 flex items-center gap-2.5 sm:mt-4 sm:gap-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-z-accent/25 text-xs font-semibold text-z-ink sm:h-9 sm:w-9 sm:text-sm">
-                      NV
+                      RK
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-white">nova</p>
-                      <p className="text-xs text-white/60">Stack trio</p>
+                      <p className="text-sm font-semibold text-white">Rook</p>
+                      <p className="text-xs text-white/60">Evrima pack</p>
                     </div>
                   </div>
                 </div>
@@ -157,8 +157,8 @@ export function HomePage({ part = 'full' }: HomePageProps) {
               {HOME_HEADINGS.h2Features}
             </h2>
             <p className="mb-8 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
-              Hero ESP, map hack, timers, last-hit helper, auto-dodge, and inventory intel — blog
-              articles and forum threads cover dota 2 cheats setup without cluttering your HUD.
+              Player ESP, animal ESP, growth and stamina trackers, water and fruit overlays — forum
+              threads and intel articles cover the isle cheats setup without cluttering your HUD.
             </p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {FEATURES.map(({ icon: Icon, label, desc, href }) => (
@@ -188,8 +188,8 @@ export function HomePage({ part = 'full' }: HomePageProps) {
               {HOME_HEADINGS.h2HowItWorks}
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
-              Dota 2 cheats stay maintainable when you treat loader status and configs like part of
-              your loadout — same habit as checking patch notes before a ranked session.
+              The Isle cheats stay maintainable when you treat loader status and configs like part of
+              your loadout — same habit as checking patch notes before joining a public server.
             </p>
             <ol className="mt-10 grid gap-4 lg:grid-cols-3">
               {HOW_IT_WORKS.map(({ step, title, text }) => (
@@ -233,7 +233,7 @@ export function HomePage({ part = 'full' }: HomePageProps) {
                   {HOME_HEADINGS.h2Reviews}
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
-                  Feedback on ESP clarity, map vision, timers, and loader updates — no external review
+                  Feedback on ESP clarity, growth trackers, and loader updates — no external review
                   links.
                 </p>
               </div>
@@ -305,7 +305,7 @@ export function HomePage({ part = 'full' }: HomePageProps) {
                   {HOME_HEADINGS.h2Forums}
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
-                  Reddit-style threads with moderators, upvotes, and member replies — VAC safety,
+                  Reddit-style threads with moderators, upvotes, and member replies — EAC safety,
                   setup, ESP configs, and loader help.
                 </p>
               </div>
@@ -362,10 +362,10 @@ export function HomePage({ part = 'full' }: HomePageProps) {
               Active and your config is saved, continue to checkout for {SITE_NAME} on PC — or read
               the{' '}
               <a
-                href="/dota-2-cheats"
+                href="/the-isle-cheats"
                 className="text-white/80 underline-offset-2 hover:underline"
               >
-                Dota 2 store
+                The Isle store
               </a>{' '}
               first.
             </p>

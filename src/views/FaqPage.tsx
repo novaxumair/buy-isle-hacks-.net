@@ -19,10 +19,10 @@ export function FaqPage() {
               {SITE_NAME}
             </p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-              Dota 2 Cheats FAQ
+              The Isle Hacks FAQ
             </h1>
             <p className="mt-4 text-base leading-relaxed text-white/60">
-              Loader status, hero ESP, map hack, timers, VAC, platforms, buying, loading, support and refunds
+              Loader status, player ESP, survival ESP, timers, EAC, platforms, buying, loading, support and refunds
               — straight answers before you checkout.
             </p>
           </div>

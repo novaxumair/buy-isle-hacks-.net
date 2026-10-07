@@ -10,18 +10,18 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const publicDir = join(root, 'public')
 const dataDir = join(root, 'src', 'data')
 const pagesDir = join(root, 'src', 'pages')
-const SITE = (process.env.SITE_URL || 'https://buydota2cheats.com').replace(/\/$/, '')
+const SITE = (process.env.SITE_URL || 'https://buyislehacks.net').replace(/\/$/, '')
 const TODAY = new Date().toLocaleDateString('en-CA')
 
-const HERO_FULL = '/media/d2-hero-full.webp'
-const COVER = '/media/d2-cover.webp'
-const BOX = '/media/d2-screenshot-8.webp'
-const ESP = '/media/d2-screenshot-5.webp'
-const MENU = '/media/d2-menu.webp'
-const SHOT = (n) => `/media/d2-screenshot-${n}.webp`
-const VIDEO_THUMB = '/media/d2-video-thumb.jpg'
+const HERO_FULL = '/media/isle-hero-full.webp'
+const COVER = '/media/isle-cover.webp'
+const BOX = '/media/isle-screenshot-8.webp'
+const ESP = '/media/isle-screenshot-5.webp'
+const MENU = '/media/isle-menu.webp'
+const SHOT = (n) => `/media/isle-screenshot-${n}.webp`
+const VIDEO_THUMB = '/media/isle-video-thumb.jpg'
 const PREVIEW_VIDEO = '/videos/hero.webm'
-const OG_DEFAULT = '/og/dota-2-cheats.jpg'
+const OG_DEFAULT = '/og/the-isle-cheats.jpg'
 
 const ALL_SITE_IMAGES = [
   HERO_FULL,
@@ -32,7 +32,7 @@ const ALL_SITE_IMAGES = [
   ...Array.from({ length: 10 }, (_, i) => SHOT(i + 1)),
   VIDEO_THUMB,
   '/og/home.jpg',
-  '/og/dota-2-cheats.jpg',
+  '/og/the-isle-cheats.jpg',
   '/og/blog.jpg',
   '/og/forums.jpg',
   '/og/reviews.jpg',
@@ -47,17 +47,19 @@ const ALL_SITE_IMAGES = [
 const FORUM_IMAGES = {
   'features-list': COVER,
   'complete-setup': HERO_FULL,
-  'hero-esp-config': ESP,
-  'map-hack-fog-config': BOX,
+  'player-esp-config': ESP,
+  'survival-esp-config': BOX,
   'game-patch-status': COVER,
   'loader-errors': SHOT(7),
-  'vac-anticheat-safety': MENU,
-  'dota-2-cheats-discussion': HERO_FULL,
+  'eac-anticheat-safety': MENU,
+  'the-isle-hacks-daily': HERO_FULL,
+  'the-isle-esp-thread': ESP,
+  'the-isle-evrima-cheats': COVER,
 }
 
 const PAGE_META = {
   '/': { priority: '1.0', changefreq: 'daily' },
-  '/dota-2-cheats': { priority: '0.9', changefreq: 'weekly' },
+  '/the-isle-cheats': { priority: '0.9', changefreq: 'weekly' },
   '/blog': { priority: '0.88', changefreq: 'weekly' },
   '/forums': { priority: '0.85', changefreq: 'weekly' },
   '/reviews': { priority: '0.8', changefreq: 'weekly' },
@@ -177,28 +179,28 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/home.jpg',
-        title: 'Dota 2 Cheats Open Graph',
+        title: 'The Isle Hacks Open Graph',
         caption: 'Primary social and search preview for the homepage.',
       },
       {
         src: HERO_FULL,
-        title: 'Dota 2 Cheats Hero',
-        caption: 'Hero artwork for Dota 2 hero ESP, map hack, and timers on PC.',
+        title: 'The Isle Hacks Hero',
+        caption: 'Hero artwork for The Isle hero ESP, map hack, and timers on PC.',
       },
       {
         src: COVER,
-        title: 'Dota 2 Cheats Product Cover',
+        title: 'The Isle Hacks Product Cover',
         caption: 'Product cover used on checkout and product previews.',
       },
       {
         src: VIDEO_THUMB,
-        title: 'Dota 2 Cheats Preview Thumbnail',
+        title: 'The Isle Hacks Preview Thumbnail',
         caption: 'Video thumbnail for the self-hosted product preview.',
       },
       {
         src: BOX,
-        title: 'Dota 2 Cheats ESP Gameplay Screenshot',
-        caption: 'Steam gameplay with player ESP overlays on buydota2cheats.com.',
+        title: 'The Isle Hacks ESP Gameplay Screenshot',
+        caption: 'Steam gameplay with player ESP overlays on buyislehacks.net.',
       },
     ]
   }
@@ -207,13 +209,13 @@ function imagesForPath(path, games, forums) {
   if (game) {
     return [
       {
-        src: '/og/dota-2-cheats.jpg',
-        title: 'Dota 2 Cheats Open Graph',
-        caption: 'Google and social preview for the Dota 2 Cheats product page.',
+        src: '/og/the-isle-cheats.jpg',
+        title: 'The Isle Hacks Open Graph',
+        caption: 'Google and social preview for the The Isle Hacks product page.',
       },
       {
         src: COVER,
-        title: 'Dota 2 Cheats ESP Product Artwork',
+        title: 'The Isle Hacks ESP Product Artwork',
         caption: 'Product features, compatibility, status and price before checkout.',
       },
       {
@@ -233,8 +235,8 @@ function imagesForPath(path, games, forums) {
       },
       {
         src: VIDEO_THUMB,
-        title: 'Dota 2 Cheats Preview Thumbnail',
-        caption: 'Thumbnail for the Dota 2 Cheats preview video.',
+        title: 'The Isle Hacks Preview Thumbnail',
+        caption: 'Thumbnail for the The Isle Hacks preview video.',
       },
     ]
   }
@@ -243,13 +245,13 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/forums.jpg',
-        title: 'Dota 2 Cheats Forums Open Graph',
-        caption: 'Google preview image for the Dota 2 Cheats guides index.',
+        title: 'The Isle Hacks Forums Open Graph',
+        caption: 'Google preview image for the The Isle Hacks guides index.',
       },
       {
         src: MENU,
-        title: 'Dota 2 Cheats Forum Artwork',
-        caption: 'Artwork reference for Dota 2 Cheats setup and feature guides.',
+        title: 'The Isle Hacks Forum Artwork',
+        caption: 'Artwork reference for The Isle Hacks setup and feature guides.',
       },
     ]
   }
@@ -263,14 +265,14 @@ function imagesForPath(path, games, forums) {
         title: `${forum?.title || slug} Open Graph`,
         caption:
           forum?.metaDescription ||
-          `Google preview image for ${forum?.title || slug} on buydota2cheats.com.`,
+          `Google preview image for ${forum?.title || slug} on buyislehacks.net.`,
       },
       {
         src: FORUM_IMAGES[slug] || MENU,
         title: `${forum?.title || slug} Artwork`,
         caption:
           forum?.excerpt ||
-          `Visible Dota 2 Cheats guide artwork for ${forum?.title || slug}.`,
+          `Visible The Isle Hacks guide artwork for ${forum?.title || slug}.`,
       },
     ]
   }
@@ -279,8 +281,8 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/reviews.jpg',
-        title: 'Dota 2 Cheats Reviews Open Graph',
-        caption: 'Google preview image for Dota 2 Cheats reviews.',
+        title: 'The Isle Hacks Reviews Open Graph',
+        caption: 'Google preview image for The Isle Hacks reviews.',
       },
     ]
   }
@@ -288,8 +290,8 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/faq.jpg',
-        title: 'Dota 2 Cheats FAQ Open Graph',
-        caption: 'Google preview image for the Dota 2 Cheats FAQ.',
+        title: 'The Isle Hacks FAQ Open Graph',
+        caption: 'Google preview image for the The Isle Hacks FAQ.',
       },
     ]
   }
@@ -297,8 +299,8 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/support.jpg',
-        title: 'Dota 2 Cheats Support Open Graph',
-        caption: 'Google preview image for Dota 2 Cheats support.',
+        title: 'The Isle Hacks Support Open Graph',
+        caption: 'Google preview image for The Isle Hacks support.',
       },
     ]
   }
@@ -306,8 +308,8 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/privacy.jpg',
-        title: 'Dota 2 Cheats Privacy Policy',
-        caption: 'Privacy policy preview for buydota2cheats.com orders and support.',
+        title: 'The Isle Hacks Privacy Policy',
+        caption: 'Privacy policy preview for buyislehacks.net orders and support.',
       },
     ]
   }
@@ -315,8 +317,8 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/terms.jpg',
-        title: 'Dota 2 Cheats Terms of Use',
-        caption: 'License terms preview for Dota 2 Cheats.',
+        title: 'The Isle Hacks Terms of Use',
+        caption: 'License terms preview for The Isle Hacks.',
       },
     ]
   }
@@ -324,23 +326,23 @@ function imagesForPath(path, games, forums) {
     return [
       {
         src: '/og/refunds.jpg',
-        title: 'Dota 2 Cheats Refund Policy',
-        caption: 'Refund rules preview for digital Dota 2 Cheats licenses.',
+        title: 'The Isle Hacks Refund Policy',
+        caption: 'Refund rules preview for digital The Isle Hacks licenses.',
       },
     ]
   }
 
-  return [{ src: OG_DEFAULT, title: 'Dota 2 Cheats', caption: 'Dota 2 Cheats page artwork.' }]
+  return [{ src: OG_DEFAULT, title: 'The Isle Hacks', caption: 'The Isle Hacks page artwork.' }]
 }
 
 function videosForPath(path) {
-  if (path === '/dota-2-cheats') {
+  if (path === '/the-isle-cheats') {
     return [
       {
         thumb: VIDEO_THUMB,
-        title: 'Dota 2 Cheats ESP and Map Vision Preview',
+        title: 'The Isle Hacks ESP and Map Vision Preview',
         description:
-          'Self-hosted Dota 2 Cheats preview showing hero ESP, map hack, and timer overlays on PC.',
+          'Self-hosted The Isle Hacks preview showing hero ESP, map hack, and timer overlays on PC.',
         content: PREVIEW_VIDEO,
       },
     ]
@@ -373,8 +375,8 @@ function sectionLabel(path) {
 }
 
 function plainTitleForPath(path, forums, articles) {
-  if (path === '/') return 'Dota 2 Cheats home'
-  if (path === '/dota-2-cheats') return 'Dota 2 Cheats product page'
+  if (path === '/') return 'The Isle Hacks home'
+  if (path === '/the-isle-cheats') return 'The Isle Hacks product page'
   if (path === '/status') return 'Loader status (Active or Updating)'
   if (path === '/blog') return 'Blog index'
   if (path.startsWith('/blog/')) {
@@ -401,7 +403,7 @@ function plainTitleForPath(path, forums, articles) {
 
 function writePlainUrlList(forums, articles, allPaths) {
   const lines = [
-    '# Dota 2 Cheats — plain URL list (buydota2cheats.com)',
+    '# The Isle Hacks — plain URL list (buyislehacks.net)',
     '# One URL per line for humans and tools. Canonical sitemap for Google: /sitemap',
     '',
   ]
@@ -515,8 +517,8 @@ function validate(games, forums, articles, allPaths, sitemap) {
   if (/Tarkov|tarkovcheats|EFT Reaper|Warzone|warzonecheats|Ricochet/i.test(sitemap)) {
     errors.push('Sitemap still contains legacy Tarkov/Warzone labels')
   }
-  if (!sitemap.includes('buydota2cheats.com')) {
-    errors.push('Sitemap must target buydota2cheats.com')
+  if (!sitemap.includes('buyislehacks.net')) {
+    errors.push('Sitemap must target buyislehacks.net')
   }
   if (/tarkovcheats|warzonecheats|buywardogscheats|wardogs|zadeyo|arena breakout/i.test(sitemap)) {
     errors.push('Sitemap contains legacy or third-party branding')

@@ -1,11 +1,11 @@
-import { D2_COVER, D2_GAME_COVER, D2_HERO, D2_MENU } from './media'
+import { ISLE_COVER, ISLE_GAME_COVER, ISLE_HERO, ISLE_MENU } from './media'
 import { SITE_OG, getOgImageForPath, PAGE_OG } from './og'
 
 export { SITE_OG, getOgImageForPath, PAGE_OG }
 export { forumOgImage } from './og'
 
-export const D2_PRODUCT_HERO = D2_HERO
-export const D2_PRODUCT_COVER = D2_COVER
+export const ISLE_PRODUCT_HERO = ISLE_HERO
+export const ISLE_PRODUCT_COVER = ISLE_COVER
 
 export type ImageSeoFields = {
   alt: string
@@ -21,13 +21,13 @@ export const IMAGE_SEO: Record<
     heroCaption: string
   }
 > = {
-  'dota-2': {
-    alt: 'Dota 2 official key art on Steam for PC',
-    title: 'Dota 2 Cheats Product Details',
-    caption: 'Hero ESP, map hack, timers, and inventory intel',
-    heroAlt: 'Dota 2 — IGN key art',
-    heroTitle: 'Dota 2 Cheats Store',
-    heroCaption: 'Premium Dota 2 cheats on Windows PC',
+  'the-isle': {
+    alt: 'The Isle — official IGN game cover art',
+    title: 'The Isle on IGN',
+    caption: 'The Isle survival game — store card art from IGN',
+    heroAlt: 'The Isle game cover from IGN',
+    heroTitle: 'The Isle — IGN',
+    heroCaption: 'The Isle on PC — official IGN artwork',
   },
 }
 
@@ -38,62 +38,62 @@ export const PAGE_IMAGES: Record<
   PageImage
 > = {
   home: {
-    src: D2_HERO,
+    src: ISLE_HERO,
     og: PAGE_OG.home,
-    alt: 'Dota 2 cheats gameplay artwork for PC',
-    title: 'Dota 2 Cheats',
-    caption: 'Hero ESP, map hack, and timer overview.',
+    alt: 'The Isle dino visuals ESP gameplay on Evrima',
+    title: 'The Isle Hacks',
+    caption: 'Flyhack, corpse teleport, free camera, and ESP previews.',
   },
   blog: {
-    src: '/media/d2-screenshot-5.webp',
+    src: '/media/isle-screenshot-5.webp',
     og: PAGE_OG.blog,
-    alt: 'Dota 2 cheats blog guides screenshot',
-    title: 'Dota 2 Cheats Blog',
+    alt: 'The Isle movement features screenshot for blog guides',
+    title: 'The Isle Hacks Blog',
     caption: 'Console commands, features, and safety articles.',
   },
   forums: {
-    src: '/media/d2-screenshot-4.webp',
+    src: '/media/isle-screenshot-4.webp',
     og: PAGE_OG.forums,
-    alt: 'Dota 2 ESP gameplay screenshot from forums',
-    title: 'Dota 2 Cheats Forums',
-    caption: 'Setup, VAC, ESP, and loader threads.',
+    alt: 'The Isle corpse teleport screenshot from forums',
+    title: 'The Isle Hacks Forums',
+    caption: 'Setup, EAC, ESP, and loader threads.',
   },
   reviews: {
-    src: '/media/d2-screenshot-2.webp',
+    src: '/media/isle-screenshot-2.webp',
     og: PAGE_OG.reviews,
-    alt: 'Dota 2 cheats review screenshot',
-    title: 'Dota 2 Cheats Reviews',
-    caption: 'Buyer feedback on ESP and timers.',
+    alt: 'The Isle flyhack review screenshot',
+    title: 'The Isle Hacks Reviews',
+    caption: 'Buyer feedback on ESP, movement, and loader stability.',
   },
   faq: {
-    src: '/media/d2-screenshot-8.webp',
+    src: '/media/isle-screenshot-8.webp',
     og: PAGE_OG.faq,
-    alt: 'Dota 2 hero ESP screenshot for FAQ',
-    title: 'Dota 2 Cheats FAQ',
+    alt: 'The Isle free camera ESP screenshot for FAQ',
+    title: 'The Isle Hacks FAQ',
     caption: 'Pricing, features, and setup answers.',
   },
   support: {
-    src: '/media/d2-screenshot-6.webp',
+    src: '/media/isle-screenshot-6.webp',
     og: PAGE_OG.support,
-    alt: 'Dota 2 cheat support screenshot',
-    title: 'Dota 2 Cheats Support',
+    alt: 'The Isle dino visuals support screenshot',
+    title: 'The Isle Hacks Support',
     caption: 'Delivery and loader help.',
   },
   product: {
-    src: D2_GAME_COVER,
+    src: ISLE_GAME_COVER,
     og: PAGE_OG.product,
-    alt: 'Dota 2 official key art (IGN) — Dota 2 Cheats store',
-    title: 'Dota 2 Cheats Store',
-    caption: 'Hero ESP, map hack, timers, and support.',
+    alt: 'The Isle dino visuals ESP — The Isle Hacks store',
+    title: 'The Isle Hacks Store',
+    caption: 'Server tools, flyhack, corpse teleport, and ESP modules.',
   },
 }
 
 export function getGameImage(_slug: string): string {
-  return D2_GAME_COVER
+  return ISLE_GAME_COVER
 }
 
 export function getProductHeroImage(_slug: string): string {
-  return D2_GAME_COVER
+  return ISLE_GAME_COVER
 }
 
 export function getOgImage(path?: string): string {
@@ -125,4 +125,4 @@ export function getImageTitle(
 }
 
 /** @deprecated unused menu asset — kept for legacy imports */
-export const D2_MENU_ASSET = D2_MENU
+export const ISLE_MENU_ASSET = ISLE_MENU

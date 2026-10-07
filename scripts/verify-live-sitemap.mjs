@@ -2,7 +2,7 @@
  * Post-deploy check: production sitemap must be fetchable like Google Search Console.
  * Usage: npm run verify:live-sitemap
  */
-const CANONICAL = (process.env.SITEMAP_URL || 'https://buydota2cheats.com/sitemap').replace(/\/$/, '')
+const CANONICAL = (process.env.SITEMAP_URL || 'https://buyislehacks.net/sitemap').replace(/\/$/, '')
 const ALIAS = CANONICAL.endsWith('.xml')
   ? CANONICAL.replace(/\/sitemap\.xml$/, '/sitemap')
   : `${CANONICAL.replace(/\/sitemap$/, '')}/sitemap.xml`
@@ -47,8 +47,8 @@ async function check(label, url) {
   if (/<html[\s>]/i.test(body)) {
     throw new Error(`${label}: response is HTML, not XML — check Worker route / deploy (${url})`)
   }
-  if (!body.includes('https://buydota2cheats.com/')) {
-    throw new Error(`${label}: missing apex URLs — GSC property must be buydota2cheats.com (${url})`)
+  if (!body.includes('https://buyislehacks.net/')) {
+    throw new Error(`${label}: missing apex URLs — GSC property must be buyislehacks.net (${url})`)
   }
   if (!body.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')) {
     throw new Error(`${label}: missing standard urlset xmlns (${url})`)
@@ -62,16 +62,16 @@ async function check(label, url) {
 
 /** Worker `workers/site.js` must run on www so crawlers get a single apex host. */
 async function checkWorkerRoutes() {
-  const res = await fetch('https://www.buydota2cheats.com/', {
+  const res = await fetch('https://www.buyislehacks.net/', {
     redirect: 'manual',
     headers: { 'User-Agent': GOOGLEBOT },
   })
   if (res.status === 301 || res.status === 308) {
     const loc = (res.headers.get('location') || '').toLowerCase()
-    if (loc.includes('buydota2cheats.com') && !loc.includes('www.')) return
+    if (loc.includes('buyislehacks.net') && !loc.includes('www.')) return
   }
   console.warn(
-    'Warning: www.buydota2cheats.com does not 301 to apex — redeploy Worker (wrangler.worker.toml routes) or add dashboard routes for buy-dota2-cheats--com.',
+    'Warning: www.buyislehacks.net does not 301 to apex — redeploy Worker (wrangler.worker.toml routes) or add dashboard routes for buyislehacks-net.',
   )
 }
 
@@ -80,7 +80,7 @@ try {
   const primary = await check('sitemap', CANONICAL)
   await check('sitemap.xml', ALIAS)
   console.log(`Live sitemap OK: ${primary.locCount} URLs, ${primary.bytes} bytes (${CANONICAL} + ${ALIAS}, both HTTP 200)`)
-  console.log('GSC (Domain property): remove failed row, submit full URL https://buydota2cheats.com/sitemap.xml — not URL Inspection.')
+  console.log('GSC (Domain property): remove failed row, submit full URL https://buyislehacks.net/sitemap.xml — not URL Inspection.')
 } catch (err) {
   console.error(String(err.message || err))
   process.exit(1)

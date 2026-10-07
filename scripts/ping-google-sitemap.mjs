@@ -3,7 +3,7 @@
  * Usage: npm run ping:google-sitemap
  */
 const url = encodeURIComponent(
-  (process.env.SITEMAP_URL || 'https://buydota2cheats.com/sitemap').replace(/\/$/, ''),
+  (process.env.SITEMAP_URL || 'https://buyislehacks.net/sitemap').replace(/\/$/, ''),
 )
 const ping = `https://www.google.com/ping?sitemap=${url}`
 const res = await fetch(ping, { redirect: 'follow' })

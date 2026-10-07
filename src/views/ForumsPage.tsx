@@ -54,12 +54,21 @@ export function ForumsPage({ initialQuery = '' }: ForumsPageProps) {
     <div className="min-h-screen overflow-x-hidden bg-z-bg text-white">
       <ListingPageHero
         currentPath="/forums"
-        eyebrow={<>r/dota2cheats · VAC · Setup · {SITE_HOST}</>}
-        title="Dota 2 Cheats Forums"
+        eyebrow={<>r/islehacks · The isle hacks · {SITE_HOST}</>}
+        title="The Isle Hacks Forums"
         description={
           <>
-            Reddit-style threads for dota 2 cheats — moderators, locked archives, and member replies.
-            Long-form guides live on the <a href="/blog">blog</a>.
+            Reddit-style threads for <strong className="font-semibold text-white/90">The isle hacks</strong>{' '}
+            — Evrima ESP, Steam setup, wallhack WH talk, EAC safety, crashes, and loader help. Intel
+            articles on the{' '}
+            <a href="/blog" className="text-white/80 underline-offset-2 hover:underline">
+              blog
+            </a>
+            ; modules on the{' '}
+            <a href="/the-isle-cheats" className="text-white/80 underline-offset-2 hover:underline">
+              store
+            </a>
+            .
           </>
         }
       />
@@ -95,7 +104,7 @@ export function ForumsPage({ initialQuery = '' }: ForumsPageProps) {
                   <ListingSearchField
                     id="forums-search"
                     label="Search forum threads"
-                    placeholder="Search forums — VAC, setup, ESP…"
+                    placeholder="Search The isle hacks forums — Evrima, ESP, EAC…"
                     defaultValue={initialQuery}
                     inputRef={inputRef}
                     onInput={onSearchInput}
@@ -161,11 +170,11 @@ export function ForumsPage({ initialQuery = '' }: ForumsPageProps) {
                 <p className="text-xs font-bold uppercase tracking-wider text-white/45">About</p>
                 <h2 className="mt-2 text-lg font-semibold text-white">{SITE_NAME}</h2>
                 <p className="mt-2 text-sm leading-relaxed text-white/55">
-                  Community forums for Dota 2 cheats on Windows PC. Threads are moderated; no key
+                  Community forums for The Isle cheats on Windows PC. Threads are moderated; no key
                   reselling or crack links.
                 </p>
                 <a
-                  href={guidePath('dota-2')}
+                  href={guidePath('the-isle')}
                   className="cta-gradient mt-4 block rounded-full py-2.5 text-center text-sm font-semibold text-white"
                 >
                   Store

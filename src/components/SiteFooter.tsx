@@ -55,7 +55,7 @@ function FooterLink({
 }
 
 /**
- * Site footer with page / guide / official Dota 2 links (crawl-friendly).
+ * Site footer with page / guide / official The Isle links (crawl-friendly).
  */
 export function SiteFooter({ currentPath }: SiteFooterProps) {
   const path = normalizePath(currentPath || '/')
@@ -74,15 +74,15 @@ export function SiteFooter({ currentPath }: SiteFooterProps) {
                 <LogoMark className="!h-16 !w-16" />
               </a>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/55">
-                Hero ESP, map hack, rune and roshan timers, and patch-synced loader status for Dota
-                2 on Windows PC.
+                Player ESP, animal ESP, growth and stamina trackers, and patch-synced loader status for
+                The Isle on Windows PC.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <CheckoutLink className="cta-gradient inline-flex rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
                   View plans
                 </CheckoutLink>
                 <a
-                  href={guidePath('dota-2')}
+                  href={guidePath('the-isle')}
                   className="inline-flex rounded-full border border-white/15 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-white/85 transition-colors hover:border-white/25 hover:bg-white/[0.07]"
                 >
                   Product page
@@ -158,7 +158,7 @@ export function SiteFooter({ currentPath }: SiteFooterProps) {
 
           <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {new Date().getFullYear()} {SITE_NAME}. Not affiliated with Valve Corporation.
+              © {new Date().getFullYear()} {SITE_NAME}. Not affiliated with the game developer.
             </p>
             <p className="sm:text-right">
               Crawl index:{' '}

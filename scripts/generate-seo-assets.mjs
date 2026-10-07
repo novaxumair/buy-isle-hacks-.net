@@ -12,11 +12,11 @@ const mediaDir = join(root, 'public', 'media')
 
 mkdirSync(ogDir, { recursive: true })
 
-const gameCover = join(mediaDir, 'd2-game-cover.webp')
-const cover = existsSync(gameCover) ? gameCover : join(mediaDir, 'd2-cover.webp')
-const hero = join(mediaDir, 'd2-hero-full.webp')
-const menu = join(mediaDir, 'd2-menu.webp')
-const shot = (n) => join(mediaDir, `d2-screenshot-${n}.webp`)
+const gameCover = join(mediaDir, 'isle-game-cover.webp')
+const cover = existsSync(gameCover) ? gameCover : join(mediaDir, 'isle-cover.webp')
+const hero = join(mediaDir, 'isle-hero-full.webp')
+const menu = join(mediaDir, 'isle-menu.webp')
+const shot = (n) => join(mediaDir, `isle-screenshot-${n}.webp`)
 
 async function ogFrom(src, outName, title) {
   const input = existsSync(src) ? src : cover
@@ -28,14 +28,14 @@ async function ogFrom(src, outName, title) {
 }
 
 const pages = [
-  ['home.jpg', hero, 'Dota 2 Cheats'],
-  ['dota-2-cheats.jpg', cover, 'Dota 2 Cheats Store'],
-  ['forums.jpg', shot(4), 'Dota 2 Cheats Forums'],
-  ['blog.jpg', shot(5), 'Dota 2 Cheats Blog'],
-  ['reviews.jpg', shot(2), 'Dota 2 Cheats Reviews'],
-  ['faq.jpg', shot(8), 'Dota 2 Cheats FAQ'],
-  ['support.jpg', shot(6), 'Dota 2 Cheats Support'],
-  ['status.jpg', shot(6), 'Dota 2 Cheats Loader Status'],
+  ['home.jpg', hero, 'The Isle Hacks'],
+  ['the-isle-cheats.jpg', cover, 'The Isle Hacks Store'],
+  ['forums.jpg', shot(4), 'The Isle Hacks Forums'],
+  ['blog.jpg', shot(5), 'The Isle Hacks Blog'],
+  ['reviews.jpg', shot(2), 'The Isle Hacks Reviews'],
+  ['faq.jpg', shot(8), 'The Isle Hacks FAQ'],
+  ['support.jpg', shot(6), 'The Isle Hacks Support'],
+  ['status.jpg', shot(6), 'The Isle Hacks Loader Status'],
   ['privacy.jpg', menu, 'Privacy Policy'],
   ['terms.jpg', menu, 'Terms of Use'],
   ['refunds.jpg', menu, 'Refund Policy'],

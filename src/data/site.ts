@@ -1,48 +1,62 @@
 import { SITE_OG } from './images'
 import { PAGE_OG } from './og'
 
-export const SITE_URL = 'https://buydota2cheats.com'
-export const SITE_NAME = 'Dota 2 Cheats'
-export const SITE_HOST = 'buydota2cheats.com'
+export const SITE_URL = 'https://buyislehacks.net'
+export const SITE_NAME = 'The Isle Hacks'
+export const SITE_HOST = 'buyislehacks.net'
 
 /** Stable site identity — Organization, WebSite, and about copy (not per-route). */
 export const SITE_PURPOSE =
-  'Dota 2 Cheats is a single-game site focused on Dota 2 map vision, hero ESP, timers, and related PC tools. The site is dedicated to Dota 2 only and does not sell cheats for other games.'
+  'The Isle Hacks is a single-game site focused on The Isle and Isle Evrima survival ESP, growth and stamina tracking, and related Windows PC tools. The site is dedicated to The Isle only and does not sell cheats for other games.'
 
 /** Site-wide subject terms for schema knowsAbout (max 6). */
 export const SITE_ABOUT = [
-  'Dota 2 cheats',
-  'Dota 2',
-  'Dota 2 ESP',
-  'Dota 2 map hack',
-  'Valve Anti-Cheat',
-  'Dota 2 cheat setup',
+  'The isle cheats',
+  'The Isle',
+  'Isle Evrima cheats',
+  'The Isle ESP',
+  'Easy Anti-Cheat',
+  'The Isle cheat setup',
 ] as const
 
 /** Legitimate brand variants only — not a meta keyword list. */
 export const ORGANIZATION_ALTERNATE_NAMES = [
-  'Dota 2 Cheats',
-  'Dota 2 cheats',
-  'buydota2cheats',
-  'buydota2cheats.com',
+  'The Isle Hacks',
+  'The isle cheats',
+  'buyislehacks',
+  'buyislehacks.net',
 ] as const
 
 /**
  * Short intent-specific terms per main route (3–6 each). Not rendered as meta keywords.
  */
 export const SEO_ROUTE_INTENTS = {
-  home: ['dota 2 cheats', 'Dota 2 ESP', 'Dota 2 map hack', 'cheat dota 2'],
-  product: ['dota 2 cheats', 'Dota 2 features', 'Dota 2 store', 'Dota 2 setup'],
-  featuresHub: ['Dota 2 cheat features', 'hero ESP', 'fog of war hack'],
-  reviews: ['Dota 2 Cheats reviews', 'Dota 2 buyer feedback'],
-  blog: ['dota 2 cheats', 'dota 2 cheats list', 'cheat dota 2', 'cheat code dota 2'],
-  forums: ['dota 2 cheats', 'cheat dota 2', 'VAC Dota 2', 'Dota 2 setup'],
-  faq: ['Dota 2 Cheats FAQ', 'Dota 2 setup questions'],
+  home: ['the isle cheats', 'The Isle ESP', 'Isle Evrima cheats', 'The Isle hacks'],
+  product: ['the isle cheats', 'The Isle store', 'The Isle features', 'The Isle setup'],
+  featuresHub: ['The Isle cheat features', 'player ESP', 'animal ESP', 'growth tracker'],
+  reviews: ['The Isle Hacks reviews', 'The Isle buyer feedback'],
+  blog: [
+    'the isle cheats',
+    'the isle wallhack',
+    'the isle esp',
+    'the isle aimbot',
+    'the isle undetected hacks',
+    'isle evrima cheats',
+  ],
+  forums: [
+    'The isle hacks',
+    'the isle cheats',
+    'the isle esp',
+    'the isle evrima cheats',
+    'the isle wallhack',
+    'the isle eac',
+  ],
+  faq: ['The Isle Hacks FAQ', 'The Isle setup questions'],
 } as const
 
 /** Product JSON-LD description (features + delivery — distinct from SITE_PURPOSE). */
 export const PRODUCT_SCHEMA_DESCRIPTION =
-  'Windows PC menu for Dota 2 with hero ESP, full map hack, ability cooldown tracker, creep and rune timers, last-hit helper, auto-dodge, ward ESP, roshan timer, enemy inventory ESP, and digital license delivery.'
+  'Windows PC menu for The Isle with player, NPC, and animal ESP, growth and stamina readouts, corpse and resource overlays, fullbright and crosshair utilities, and digital license delivery.'
 
 /** Offer price shown on product schema + purchase UI (lowest plan). */
 export const PRODUCT_PRICE_USD = '35'
@@ -71,125 +85,125 @@ const INDEX_ROBOTS =
 
 export const SEO = {
   home: {
-    title: 'Dota 2 Cheats | ESP, Map Hack & Timers',
+    title: 'The Isle Hacks | ESP, Growth & Stamina Cheats',
     description:
-      'Buy Dota 2 cheats for Windows PC. Hero ESP, full map hack, cooldown tracker, creep and rune timers, last-hit helper, ward ESP, roshan timer, and 24/7 support.',
+      'Buy The Isle hacks and Isle Evrima cheats on Windows PC. Player, NPC & animal ESP, growth, stamina, health, and gore with live status. Monthly $35 or lifetime $150.',
     path: '/',
     ogType: 'website',
     image: PAGE_OG.home,
-    imageAlt: 'Dota 2 cheats gameplay with hero ESP, map vision, and timers on PC',
+    imageAlt: 'The Isle cheats gameplay with player ESP, growth, and stamina overlays on PC',
     robots: INDEX_ROBOTS,
   },
   blog: {
-    title: 'Dota 2 Cheats Blog | Guides & Features',
+    title: 'The Isle Intel | The isle hacks guides',
     description:
-      'Dota 2 cheats blog with console command guides, item lists, lobby setup, feature deep dives, HWID safety, and 2026 product comparisons.',
+      'The isle hacks intel on buyislehacks.net — wallhack WH, Evrima ESP, aimbot keywords, undetected EAC notes, growth and stamina, and how to buy The Isle cheats.',
     path: '/blog',
     ogType: 'website',
     image: PAGE_OG.blog,
-    imageAlt: 'Dota 2 cheats blog guides and feature articles',
+    imageAlt: 'The Isle intel blog guides and survival ESP articles',
     robots: INDEX_ROBOTS,
   },
   forums: {
-    title: 'Dota 2 Cheats Forums | Community Threads',
+    title: 'The Isle Hacks Forums | The isle hacks threads',
     description:
-      'Reddit-style Dota 2 cheats forums — VAC safety, setup, hero ESP, map hack configs, loader help, and patch-day status from moderators.',
+      'The isle hacks forums on buyislehacks.net — Evrima ESP, infinite stamina myths, Steam loader setup, wallhack WH, EAC safety, crashes, offsets policy, and patch-day status.',
     path: '/forums',
     ogType: 'website',
     image: PAGE_OG.forums,
-    imageAlt: 'Dota 2 cheats community forum threads',
+    imageAlt: 'The Isle cheats community forum threads',
     robots: INDEX_ROBOTS,
   },
   reviews: {
-    title: 'Dota 2 Cheats Reviews | Buyer Feedback',
+    title: 'The Isle Hacks Reviews | Buyer Feedback',
     description:
-      'Read Dota 2 cheats reviews covering ESP clarity, map vision, timer accuracy, loader stability, and overall value on Windows PC.',
+      'Read The Isle hacks reviews from buyers covering player ESP, growth, stamina, animal ESP, and status before you pick monthly or lifetime.',
     path: '/reviews',
     ogType: 'website',
     image: PAGE_OG.reviews,
-    imageAlt: 'Dota 2 cheats review screenshot with ESP overlays',
+    imageAlt: 'The Isle cheats review screenshot with ESP overlays',
     robots: INDEX_ROBOTS,
   },
   faq: {
-    title: 'Dota 2 Cheats FAQ',
+    title: 'The Isle FAQ | The Isle Hacks',
     description:
-      'Frequently asked questions about Dota 2 cheats covering VAC, features, Windows setup, monthly and lifetime plans, and support.',
+      'FAQ for The Isle hacks on Windows PC — $35 monthly and $150 lifetime, ESP and survival features, status, setup, and Discord support for Isle Evrima.',
     path: '/faq',
     ogType: 'website',
     image: PAGE_OG.faq,
-    imageAlt: 'Dota 2 hero ESP overlay screenshot from FAQ',
+    imageAlt: 'The Isle player ESP overlay screenshot from FAQ',
     robots: INDEX_ROBOTS,
   },
   support: {
-    title: 'Dota 2 Cheats Support',
+    title: 'The Isle Support | The Isle Hacks',
     description:
-      'Get support for Dota 2 cheats including loader setup, configuration help, troubleshooting, and feature guidance after purchase.',
+      'Get support for The Isle hacks on Discord — loader setup, instant delivery, menu configuration, and anti-cheat status help after you purchase.',
     path: '/support',
     ogType: 'website',
     image: PAGE_OG.support,
-    imageAlt: 'Dota 2 cheat support and loader help',
+    imageAlt: 'The Isle cheat support and loader help',
     robots: INDEX_ROBOTS,
   },
   product: {
-    title: 'Dota 2 Cheats Store',
+    title: 'The Isle Store | The Isle Hacks',
     description:
-      'Dota 2 cheats store — hero ESP, map hack, timers, last-hit helper, auto-dodge, and inventory ESP. Monthly $35 and lifetime $150 with instant delivery.',
-    path: '/dota-2-cheats',
+      'The Isle store for The Isle hacks and Isle Evrima cheats. Monthly access is $35 and lifetime is $150, featuring survival ESP, stat trackers, and instant delivery.',
+    path: '/the-isle-cheats',
     ogType: 'product',
     image: PAGE_OG.product,
-    imageAlt: 'Dota 2 store page showing ESP, map hack, and timer modules',
+    imageAlt: 'The Isle store page showing player ESP, growth, and stamina modules',
     robots: INDEX_ROBOTS,
   },
   features: {
-    title: 'Dota 2 Cheats Features',
+    title: 'The Isle Features | The Isle Hacks',
     description:
-      'Dota 2 cheats features include hero ESP, fog removal, ability cooldown tracker, creep spawn timers, rune indicators, and roshan timer.',
+      'The Isle features for The Isle hacks — player ESP, NPC ESP, animal ESP, growth, stamina, species, health, corpse tracking, water, fruit, and fullbright on Windows PC.',
     path: '/forums/features-list',
     ogType: 'article',
     image: PAGE_OG.forums,
-    imageAlt: 'Dota 2 cheat feature list with ESP and map hack modules',
+    imageAlt: 'The Isle cheat feature list with ESP and survival modules',
     robots: INDEX_ROBOTS,
   },
   setup: {
-    title: 'Dota 2 Cheats Setup',
+    title: 'The Isle Setup | The Isle Hacks',
     description:
-      'Learn how Dota 2 cheats work, configure ESP and map vision, and optimize your loader setup on Windows PC.',
+      'Learn how to set up The Isle hacks, which custom panic and menu keys matter, and what to check before loading your Isle Evrima cheats on Windows PC.',
     path: '/forums/complete-setup',
     ogType: 'article',
     image: PAGE_OG.forums,
-    imageAlt: 'Dota 2 cheat setup guide on Windows PC',
+    imageAlt: 'The Isle cheat setup guide on Windows PC',
     robots: INDEX_ROBOTS,
   },
   status: {
-    title: 'Dota 2 Cheats Status | Loader Active or Updating',
+    title: 'The Isle Status | The Isle Hacks',
     description:
-      'Live loader status for Dota 2 cheats on buydota2cheats.com. Active means ready to load; Updating means wait after a Valve patch.',
+      'The Isle cheat status and security updates for The Isle hacks. Read clear versus updating status after game patches and anti-cheat updates before you load.',
     path: '/status',
     ogType: 'website',
     image: PAGE_OG.status,
-    imageAlt: 'Dota 2 Cheats loader status — Active or Updating',
+    imageAlt: 'The Isle Hacks loader status — Active or Updating',
     robots: INDEX_ROBOTS,
   },
   preview: {
-    title: 'Dota 2 Cheats Preview',
+    title: 'The Isle Preview | The Isle Hacks',
     description:
-      'Preview Dota 2 cheats with hero ESP, map hack, and timer overlays before checkout.',
-    path: '/dota-2-cheats',
+      'Preview player ESP, animal ESP, growth, stamina, and crosshair overlays for The Isle. See how The Isle hacks group survival visuals before you checkout.',
+    path: '/the-isle-cheats',
     ogType: 'website',
     image: PAGE_OG.product,
-    imageAlt: 'Dota 2 cheats preview with ESP and map vision',
+    imageAlt: 'The Isle cheats preview with ESP and survival overlays',
     robots: INDEX_ROBOTS,
   },
 } as const satisfies Record<string, PageSeo>
 
 export const HOME_HEADINGS = {
-  h1: 'Dota 2 Cheats',
-  h2Features: 'Dota 2 Cheats Features',
-  h2HowItWorks: 'How Dota 2 Cheats Work',
-  h2Reviews: 'Dota 2 Cheats Reviews',
-  h2Blog: 'Dota 2 Cheats Blog',
+  h1: 'The Isle Hacks',
+  h2Features: 'The Isle Cheats Features',
+  h2HowItWorks: 'How The Isle Hacks Work',
+  h2Reviews: 'The Isle Hacks Reviews',
+  h2Blog: 'The Isle Intel',
   h2Forums: 'Community Forums',
-  h2Faq: 'Dota 2 Cheats FAQ',
+  h2Faq: 'The Isle Hacks FAQ',
   h2Access: 'Ready when you are',
 } as const
 

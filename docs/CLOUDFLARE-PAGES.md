@@ -4,7 +4,7 @@ This site is meant to run as a **Pages project**, not a zone Worker on the same 
 
 ## Dashboard settings
 
-In **Workers & Pages** → your **Pages** project (e.g. `buydota2cheats`) → **Settings** → **Build & deployments**:
+In **Workers & Pages** → your **Pages** project (e.g. `buyislehacks`) → **Settings** → **Build & deployments**:
 
 | Setting | Value |
 |--------|--------|
@@ -19,8 +19,8 @@ Optional: if you must use a deploy command, use `npm run deploy:pages` **after**
 
 ## Custom domain (one host only)
 
-1. **Pages** project → **Custom domains** → add `buydota2cheats.com` (and optionally `www`, which 301s to apex via `_redirects`).
-2. **Workers** → **Routes**: there must be **no** route like `buydota2cheats.com/*` pointing at `buydota2cheats-worker` or `workers/site.js`. If both Pages and a Worker serve the same hostname, Search Console often fails on `sitemap.xml`.
+1. **Pages** project → **Custom domains** → add `buyislehacks.net` (and optionally `www`, which 301s to apex via `_redirects`).
+2. **Workers** → **Routes**: there must be **no** route like `buyislehacks.net/*` pointing at `buyislehacks-worker` or `workers/site.js`. If both Pages and a Worker serve the same hostname, Search Console often fails on `sitemap.xml`.
 
 ## What gets deployed
 
@@ -53,4 +53,4 @@ npm run build
 npm run deploy:worker
 ```
 
-Do not use Worker + Pages on **buydota2cheats.com** at the same time.
+Do not use Worker + Pages on **buyislehacks.net** at the same time.

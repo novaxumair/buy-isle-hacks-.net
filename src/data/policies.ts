@@ -18,12 +18,12 @@ export const POLICY_PAGES: PolicyPageContent[] = [
   {
     slug: 'privacy',
     path: '/privacy',
-    title: 'Privacy Policy | Dota 2 Cheats',
+    title: 'Privacy Policy | The Isle Hacks',
     description:
-      'How buydota2cheats.com handles order details, delivery email, support messages and basic site analytics for Dota 2 Cheats.',
+      'How buyislehacks.net handles order details, delivery email, support messages and basic site analytics for The Isle Hacks.',
     h1: 'Privacy Policy',
     intro:
-      'This page explains what we collect when you browse buydota2cheats.com, buy a Dota 2 cheat license, or contact support — and what we do not collect.',
+      'This page explains what we collect when you browse buyislehacks.net, buy a The Isle cheat license, or contact support — and what we do not collect.',
     sections: [
       {
         heading: 'What we collect',
@@ -45,8 +45,8 @@ export const POLICY_PAGES: PolicyPageContent[] = [
         heading: 'Cookies and third parties',
         body: [
           'Essential cookies may be set by checkout or CDN providers so payment and delivery work.',
-          'Preview media is self-hosted on buydota2cheats.com. Third-party embeds are not used for the main product preview.',
-          'Official Dota 2 on Steam links are external. Valve privacy policies apply once you leave buydota2cheats.com.',
+          'Preview media is self-hosted on buyislehacks.net. Third-party embeds are not used for the main product preview.',
+          'Official The Isle on Steam links are external. Steam and the game publisher privacy policies apply once you leave buyislehacks.net.',
         ],
       },
       {
@@ -66,24 +66,24 @@ export const POLICY_PAGES: PolicyPageContent[] = [
   {
     slug: 'terms',
     path: '/terms',
-    title: 'Terms of Use | Dota 2 Cheats',
+    title: 'Terms of Use | The Isle Hacks',
     description:
-      'License rules, age limits, VAC risk, and liability limits for Dota 2 Cheats on buydota2cheats.com.',
+      'License rules, age limits, EAC risk, and liability limits for The Isle Hacks on buyislehacks.net.',
     h1: 'Terms of Use',
     intro:
-      'Buying or running Dota 2 Cheats means you accept these terms. A license covers personal use of hero ESP, map hack, timers, and related modules for Dota 2 on Windows PC — nothing beyond that.',
+      'Buying or running The Isle Hacks means you accept these terms. A license covers personal use of player ESP, survival ESP, timers, and related modules for The Isle on Windows PC — nothing beyond that.',
     sections: [
       {
         heading: 'Acceptance and what a license covers',
         body: [
-          'A key unlocks the current Dota 2 cheat build for the duration you purchased (monthly or lifetime plans).',
+          'A key unlocks the current The Isle cheat build for the duration you purchased (monthly or lifetime plans).',
           'Handing the package to someone else, reselling it, sharing accounts, or reverse-engineering the loader breaks these terms and can end your access without a refund.',
         ],
       },
       {
         heading: 'Risk and anti-cheat disclaimer',
         body: [
-          'Dota 2 uses Valve Anti-Cheat (VAC) and Valve moderation. Using third-party software can violate the game terms and lead to account penalties.',
+          'The Isle uses Easy Anti-Cheat (EAC) and Steam moderation. Using third-party software can violate the game terms and lead to account penalties.',
           'We push rebuilds after game updates when needed, but nothing here guarantees a build stays compatible forever or that an account stays safe.',
           'All risk sits with you. We accept no liability for bans, lost MMR, or other damage tied to using the product. Check Active status before you load.',
         ],
@@ -113,12 +113,12 @@ export const POLICY_PAGES: PolicyPageContent[] = [
   {
     slug: 'refunds',
     path: '/refunds',
-    title: 'Refund Policy | Dota 2 Cheats',
+    title: 'Refund Policy | The Isle Hacks',
     description:
-      'When Dota 2 Cheats refunds apply for digital licenses, delivery failures, and Updating status windows on buydota2cheats.com.',
+      'When The Isle Hacks refunds apply for digital licenses, delivery failures, and Updating status windows on buyislehacks.net.',
     h1: 'Refund Policy',
     intro:
-      'Dota 2 Cheats licenses are digital goods. This page covers when we can refund, when we cannot, and how to open a request with your order ID.',
+      'The Isle Hacks licenses are digital goods. This page covers when we can refund, when we cannot, and how to open a request with your order ID.',
     sections: [
       {
         heading: 'When refunds are available',

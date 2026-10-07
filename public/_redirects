@@ -1,7 +1,7 @@
 # www → apex is handled in workers/site.js (Worker _redirects allow relative paths only)
 
 # Checkout (302 — not indexed as site content; see CheckoutLink)
-/checkout  https://zadeyo.com/go/UMAIR?to=%2Fproducts%2Fdota-2  302
+/checkout  https://zadeyo.com/go/UMAIR?to=%2Fproducts%2Fthe-isle-novaxware  302
 
 # Path aliases
 /refund/        /refunds       301
@@ -15,43 +15,53 @@
 /terms-of-service/ /terms      301
 
 # Primary SEO keyword variants → product or home
-/buy-dota-2-cheats  /   301
-/buy-dota-2-cheats/ /   301
-/buy-dota2-cheats   /dota-2-cheats   301
-/buy-dota2-cheats/  /dota-2-cheats   301
-/get-dota-2-cheats  /forums/complete-setup  301
-/get-dota-2-cheats/ /forums/complete-setup  301
+/buy-the-isle-cheats  /   301
+/buy-the-isle-cheats/ /   301
+/buy-isle-cheats   /the-isle-cheats   301
+/buy-isle-cheats/  /the-isle-cheats   301
+/buyislehacks   /   301
+/buyislehacks/  /   301
+/get-the-isle-cheats  /forums/complete-setup  301
+/get-the-isle-cheats/ /forums/complete-setup  301
 
-# Legacy Wardogs / template paths
-/wardogs-cheats    /dota-2-cheats   301
-/wardogs-cheats/   /dota-2-cheats   301
+# Legacy foreign-game URLs → Isle product (301 only; not linked from site UI)
+/wardogs-cheats    /the-isle-cheats   301
+/wardogs-cheats/   /the-isle-cheats   301
 /buy-wardogs-cheats  /   301
 /buy-wardogs-cheats/ /   301
-/the-isle-cheats    /dota-2-cheats   301
-/the-isle-cheats/   /dota-2-cheats   301
-/abi-cheats    /dota-2-cheats   301
-/abi-cheats/   /dota-2-cheats   301
-/dayz-cheats    /dota-2-cheats   301
-/dayz-cheats/   /dota-2-cheats   301
+/dota-2-cheats    /the-isle-cheats   301
+/dota-2-cheats/   /the-isle-cheats   301
+/buydota2cheats    /   301
+/buydota2cheats/   /   301
+/abi-cheats    /the-isle-cheats   301
+/abi-cheats/   /the-isle-cheats   301
+/dayz-cheats    /the-isle-cheats   301
+/dayz-cheats/   /the-isle-cheats   301
 
 /guides         /forums        301
 /guides/        /forums        301
 /features-list  /forums/features-list  301
 /setup          /forums/complete-setup 301
-/store          /dota-2-cheats 301
-/preview        /dota-2-cheats 301
+/store          /the-isle-cheats 301
+/preview        /the-isle-cheats 301
 # /status is a dedicated loader status page (see src/pages/status.astro)
 
 # Forum short-slug aliases
 /forums/setup         /forums/complete-setup     301
 /forums/features      /forums/features-list      301
-/forums/vac           /forums/vac-anticheat-safety 301
-/forums/esp           /forums/hero-esp-config    301
-/forums/map           /forums/map-hack-fog-config 301
+/forums/eac           /forums/eac-anticheat-safety 301
+/forums/vac           /forums/eac-anticheat-safety 301
+/forums/esp           /forums/player-esp-config    301
+/forums/survival      /forums/survival-esp-config 301
 /forums/patch         /forums/game-patch-status  301
 /forums/loader        /forums/loader-errors      301
-/forums/buy           /forums/buy-dota-2-cheats-safely 301
-/forums/lifetime      /forums/dota-2-cheats-lifetime 301
+/forums/buy           /forums/buy-the-isle-hacks-safely 301
+/forums/lifetime      /forums/the-isle-hacks-lifetime 301
+/forums/daily         /forums/the-isle-hacks-daily 301
+/forums/evrima        /forums/the-isle-evrima-cheats 301
+/forums/the-isle-cheats-discussion  /forums/the-isle-hacks-daily 301
+/forums/buy-the-isle-cheats-safely  /forums/buy-the-isle-hacks-safely 301
+/forums/the-isle-cheats-lifetime  /forums/the-isle-hacks-lifetime 301
 
 # Legacy blog → new blog (do not send to forums)
 /articles       /blog        301

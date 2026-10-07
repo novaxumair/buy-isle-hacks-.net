@@ -27,7 +27,7 @@ const STATUS_COPY: Record<
   Active: {
     badge: 'Loader status',
     headline: 'Active',
-    sub: 'This build matches the live Dota 2 client on Steam. Safe to configure ESP and load when your setup checklist is done.',
+    sub: 'This build matches the live The Isle client on Steam. Safe to configure ESP and load when your setup checklist is done.',
     glow: 'shadow-[0_0_60px_rgba(52,211,153,0.22)]',
     ring: 'ring-1 ring-emerald-400/35',
     panel: 'from-emerald-500/12 via-[rgba(20,16,31,0.95)] to-[rgba(12,8,22,0.98)]',
@@ -37,7 +37,7 @@ const STATUS_COPY: Record<
   Updating: {
     badge: 'Loader status',
     headline: 'Updating',
-    sub: 'Valve shipped a Dota 2 patch or the loader is being re-tested. Wait for Active before ranked — forum moderators post ETA hints.',
+    sub: 'The Isle Evrima patch or loader re-test in progress. Wait for Active before joining public servers — forum moderators post ETA hints.',
     glow: 'shadow-[0_0_60px_rgba(251,191,36,0.18)]',
     ring: 'ring-1 ring-amber-400/35',
     panel: 'from-amber-500/10 via-[rgba(20,16,31,0.95)] to-[rgba(12,8,22,0.98)]',
@@ -47,7 +47,7 @@ const STATUS_COPY: Record<
   'Use with caution': {
     badge: 'Loader status',
     headline: 'Caution',
-    sub: 'Modules may work but reports or VAC noise are elevated. Prefer custom lobbies and read the VAC safety thread before mains.',
+    sub: 'Modules may work but reports or EAC noise are elevated. Prefer custom lobbies and read the EAC safety thread before mains.',
     glow: 'shadow-[0_0_60px_rgba(248,113,113,0.16)]',
     ring: 'ring-1 ring-rose-400/30',
     panel: 'from-rose-500/10 via-[rgba(20,16,31,0.95)] to-[rgba(12,8,22,0.98)]',
@@ -57,7 +57,7 @@ const STATUS_COPY: Record<
 }
 
 export function StatusPage() {
-  const game = getGame('dota-2')
+  const game = getGame('the-isle')
   const status: GameStatus = game?.status ?? 'Active'
   const ui = STATUS_COPY[status]
   const StatusIcon = ui.icon
@@ -111,7 +111,7 @@ export function StatusPage() {
             </p>
             {isActive ? (
               <p className="mt-4 text-center text-xs text-white/40">
-                Label can flip after the next Dota 2 patch — refresh before every session.
+                Label can flip after the next The Isle patch — refresh before every session.
               </p>
             ) : null}
           </div>
@@ -120,7 +120,7 @@ export function StatusPage() {
             <article className="page-card rounded-2xl border-t-2 border-t-emerald-400/70 p-5 sm:p-6">
               <h2 className="text-lg font-semibold text-emerald-300">Active</h2>
               <p className="mt-2 text-sm leading-relaxed text-white/55">
-                Loader matches the current game build. Configure hero ESP, map hack, and timers, save
+                Loader matches the current game build. Configure player ESP, survival ESP, and timers, save
                 a profile, then checkout if you still need a license. Monthly ${PRODUCT_PRICE_USD} ·
                 lifetime ${PRODUCT_LIFETIME_PRICE_USD}.
               </p>
@@ -148,9 +148,9 @@ export function StatusPage() {
           </div>
 
           <p className="mt-8 text-sm leading-relaxed text-white/50">
-            {SITE_NAME} is built for Dota 2 on Windows PC via Steam. Valve Anti-Cheat (VAC) still
+            {SITE_NAME} is built for The Isle on Windows PC via Steam. Easy Anti-Cheat (EAC) still
             applies — use conservative settings on accounts you care about. See the{' '}
-            <a href={guidePath('dota-2')} className="text-z-soft hover:text-white">
+            <a href={guidePath('the-isle')} className="text-z-soft hover:text-white">
               product page
             </a>{' '}
             for modules and the{' '}

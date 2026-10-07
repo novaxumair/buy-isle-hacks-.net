@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { D2_HERO, D2_HOME_VIDEO } from '../data/media'
+import { ISLE_HERO, ISLE_HOME_VIDEO } from '../data/media'
 
 type VideoBgProps = {
   /** Static fallback when reduced motion / save-data */
@@ -16,8 +16,8 @@ function prefersStaticHero() {
 
 /** Full-bleed hero video — muted loop, cover fit. */
 export function VideoBg({
-  image = D2_HERO,
-  imageAlt = 'Dota 2 gameplay with hero ESP and map vision overlay',
+  image = ISLE_HERO,
+  imageAlt = 'The Isle gameplay with player ESP and survival stat overlays',
 }: VideoBgProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [posterOnly, setPosterOnly] = useState(false)
@@ -83,10 +83,10 @@ export function VideoBg({
         loop
         playsInline
         preload="auto"
-        poster={D2_HOME_VIDEO.poster}
-        aria-label={D2_HOME_VIDEO.title}
+        poster={ISLE_HOME_VIDEO.poster}
+        aria-label={ISLE_HOME_VIDEO.title}
       >
-        <source src={D2_HOME_VIDEO.src} type="video/webm" />
+        <source src={ISLE_HOME_VIDEO.src} type="video/webm" />
       </video>
       <span className="sr-only">{imageAlt}</span>
       <div className="hero-video-tint pointer-events-none absolute inset-0 z-[2]" aria-hidden />

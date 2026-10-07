@@ -1,5 +1,5 @@
 export const SUPPORT_INTRO =
-  'Support for Dota 2 Cheats buyers on buydota2cheats.com — help with loader setup, Active status, hero ESP and map hack config, timers, and delivery after purchase.'
+  'Support for The Isle Hacks buyers on buyislehacks.net — help with loader setup, Active status, player and animal ESP config, growth and stamina overlays, and delivery after purchase.'
 
 export const SUPPORT_HIGHLIGHTS = [
   {
@@ -8,7 +8,7 @@ export const SUPPORT_HIGHLIGHTS = [
   },
   {
     title: 'Patch windows',
-    text: 'Dota 2 and VAC updates can invalidate yesterday’s build. Status honesty matters more than rushing a ranked queue.',
+    text: 'The Isle and EAC updates can invalidate yesterday’s build. Status honesty matters more than rushing into a public server.',
   },
   {
     title: 'Delivery',
@@ -19,23 +19,23 @@ export const SUPPORT_HIGHLIGHTS = [
 export const SUPPORT_FAQ = [
   {
     q: 'What do you support?',
-    a: 'Supported: Dota 2 on Windows PC (Steam), loader and menu help for paid licenses.',
+    a: 'Supported: The Isle on Windows PC (Evrima), loader and menu help for paid licenses.',
   },
   {
     q: 'How do I contact support?',
-    a: 'Use the contact options linked after purchase or open your order on buydota2cheats.com. Include a status screenshot (Active / Updating) and whether you need load, menu, or delivery help.',
+    a: 'Use Discord and contact options linked after purchase. Include a status screenshot (Active / Updating) and whether you need load, menu, or delivery help.',
   },
   {
     q: 'Loader fails after exclusions',
-    a: 'Do not spam launch. Restart Dota 2, confirm antivirus exclusions, re-check status, then try one clean load. If it still fails, contact support with your order ID.',
+    a: 'Do not spam launch. Restart The Isle, confirm antivirus exclusions, re-check status, then try one clean load. If it still fails, contact support with your order ID.',
   },
   {
     q: 'Which clients are supported?',
-    a: 'Steam on Windows when loader status is Active.',
+    a: 'Isle Evrima on Windows when loader status is Active.',
   },
   {
     q: 'Delivery safety',
-    a: 'Delivery is digital after checkout on buydota2cheats.com. Use only that loader link. Third-party mirrors are unsupported and unsafe.',
+    a: 'Delivery is digital after checkout on buyislehacks.net. Use only that loader link. Third-party mirrors are unsupported and unsafe.',
   },
 ] as const
 

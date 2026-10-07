@@ -1,25 +1,24 @@
 /**
- * First-party Dota 2 Cheats media paths and page SEO fields.
+ * First-party The Isle Hacks media paths and page SEO fields.
  */
 
-export const D2_HERO = '/media/d2-hero-full.webp'
-export const D2_COVER = '/media/d2-cover.webp'
-/** Dota 2 key art from IGN — store / purchase card. */
-export const D2_IGN_COVER = '/media/d2-ign-cover.webp'
-export const D2_GAME_COVER = D2_IGN_COVER
-export const D2_MENU = '/media/d2-menu.webp'
-export const D2_VIDEO_THUMB = '/media/d2-video-thumb.jpg'
+export const ISLE_HERO = '/media/isle-hero-full.webp'
+export const ISLE_COVER = '/media/isle-cover.webp'
+export const ISLE_IGN_COVER = '/media/isle-ign-cover.webp'
+export const ISLE_GAME_COVER = ISLE_IGN_COVER
+export const ISLE_MENU = '/media/isle-menu.webp'
+export const ISLE_VIDEO_THUMB = '/media/isle-video-thumb.jpg'
 
-export const D2_HOME_VIDEO = {
+export const ISLE_HOME_VIDEO = {
   src: '/videos/hero.webm',
-  poster: D2_VIDEO_THUMB,
-  title: 'Dota 2 cheats gameplay preview with hero ESP, map hack, and timers',
+  poster: ISLE_VIDEO_THUMB,
+  title: 'The Isle cheats gameplay preview with player ESP, growth, and stamina overlays',
   caption:
-    'Preview of Dota 2 hero ESP, fog removal, rune timers, and teamfight overlays on Windows PC.',
+    'Preview of The Isle player and animal ESP, growth and stamina readouts, and survival overlays on Windows PC.',
 } as const
 
 export function shot(n: number) {
-  return `/media/d2-screenshot-${n}.webp`
+  return `/media/isle-screenshot-${n}.webp`
 }
 
 /** Stable gameplay thumb per blog slug (screenshots 1–10). */
@@ -30,16 +29,16 @@ export function articleThumbnail(slug: string) {
 }
 
 export const GALLERY_SHOTS = [
-  { src: shot(1), alt: 'Dota 2 hero ESP with item and level tags on enemy offlaner' },
-  { src: shot(2), alt: 'Dota 2 map vision and ward ESP during mid-game rotation' },
-  { src: shot(3), alt: 'Dota 2 ability cooldown tracker in a teamfight' },
-  { src: shot(4), alt: 'Dota 2 rune spawn indicator and creep timer overlay' },
-  { src: shot(5), alt: 'Dota 2 last-hit helper and GPM-focused lane farm' },
-  { src: shot(6), alt: 'Dota 2 roshan timer callout with inventory ESP' },
-  { src: shot(7), alt: 'Dota 2 fog removal with readable map hack opacity' },
-  { src: shot(8), alt: 'Dota 2 autohook script assist during lane skirmish' },
-  { src: shot(9), alt: 'Dota 2 skillshot dodger overlay in teamfight' },
-  { src: shot(10), alt: 'Dota 2 rune and objective timer abuse helper in match' },
+  { src: shot(1), alt: 'The Isle server crasher status report overlay on Evrima' },
+  { src: shot(2), alt: 'The Isle flyhack movement feature in live gameplay' },
+  { src: shot(3), alt: 'The Isle corpse teleport pulling food to your dinosaur' },
+  { src: shot(4), alt: 'The Isle corpse teleport range circle during night hunt' },
+  { src: shot(5), alt: 'The Isle movement features with ESP and FOV ring' },
+  { src: shot(6), alt: 'The Isle dino visuals ESP highlighting animals in jungle' },
+  { src: shot(7), alt: 'The Isle free camera scouting players through foliage' },
+  { src: shot(8), alt: 'The Isle free camera with deer ESP distance labels' },
+  { src: shot(9), alt: 'The Isle movement features ESP on carnivore pathing' },
+  { src: shot(10), alt: 'The Isle dino visuals wireframe ESP at range' },
 ] as const
 
 /** Product page marquee gallery */
@@ -47,42 +46,42 @@ export const PRODUCT_PREVIEW_GALLERY = GALLERY_SHOTS
 
 export const PAGE_MEDIA = {
   home: {
-    image: D2_HERO,
-    alt: 'Dota 2 cheats gameplay with hero ESP and map vision overlays',
-    title: 'Dota 2 Cheats',
-    caption: 'Hero ESP, map hack, timers, and inventory intel for Dota 2 on PC.',
+    image: ISLE_HERO,
+    alt: 'The Isle cheats gameplay with player ESP and survival stat overlays',
+    title: 'The Isle Hacks',
+    caption: 'Player ESP, growth, stamina, and resource intel for The Isle on PC.',
   },
   product: {
-    image: D2_COVER,
-    video: D2_HOME_VIDEO.src,
-    alt: 'Dota 2 Cheats store — ESP, map hack, and timers in live matches',
-    title: 'Dota 2 Cheats Store',
-    caption: 'Full module list and plans for Dota 2 on Windows PC.',
-    videoTitle: D2_HOME_VIDEO.title,
-    videoDescription: D2_HOME_VIDEO.caption,
+    image: ISLE_COVER,
+    video: ISLE_HOME_VIDEO.src,
+    alt: 'The Isle Hacks store — ESP, growth, and stamina in live Evrima sessions',
+    title: 'The Isle Store',
+    caption: 'Full module list and plans for The Isle on Windows PC.',
+    videoTitle: ISLE_HOME_VIDEO.title,
+    videoDescription: ISLE_HOME_VIDEO.caption,
   },
   forums: {
     image: shot(4),
-    alt: 'Dota 2 ESP gameplay screenshot from community forums',
-    title: 'Dota 2 Cheats Forums',
-    caption: 'VAC safety, setup, ESP configs, and loader help.',
+    alt: 'The Isle ESP gameplay screenshot from community forums',
+    title: 'The Isle Forums',
+    caption: 'EAC safety, setup, ESP configs, and loader help.',
   },
   reviews: {
     image: shot(2),
-    alt: 'Dota 2 cheats review screenshot with ESP overlays',
-    title: 'Dota 2 Cheats Reviews',
-    caption: 'Buyer feedback on map vision, timers, and loader stability.',
+    alt: 'The Isle cheats review screenshot with ESP overlays',
+    title: 'The Isle Hacks Reviews',
+    caption: 'Buyer feedback on ESP clarity, growth trackers, and loader stability.',
   },
   faq: {
     image: shot(8),
-    alt: 'Dota 2 hero ESP overlay screenshot for FAQ',
-    title: 'Dota 2 Cheats FAQ',
-    caption: 'Compatibility, pricing, VAC notes, and setup answers.',
+    alt: 'The Isle player ESP overlay screenshot for FAQ',
+    title: 'The Isle FAQ',
+    caption: 'Compatibility, pricing, EAC notes, and setup answers.',
   },
   support: {
     image: shot(6),
-    alt: 'Dota 2 cheat support screenshot with menu HUD',
-    title: 'Dota 2 Cheats Support',
+    alt: 'The Isle cheat support screenshot with menu HUD',
+    title: 'The Isle Support',
     caption: 'Delivery, loader errors, and configuration help.',
   },
 } as const
@@ -94,8 +93,8 @@ export function getForumMedia(slug: string) {
   const title = slug.replace(/-/g, ' ')
   return {
     image: shot(n),
-    alt: `Dota 2 cheats guide — ${title} gameplay screenshot`,
-    title: `Dota 2 Cheats — ${title}`,
-    caption: `Forum thread imagery for ${title} on buydota2cheats.com.`,
+    alt: `The Isle cheats guide — ${title} gameplay screenshot`,
+    title: `The Isle Hacks — ${title}`,
+    caption: `Forum thread imagery for ${title} on buyislehacks.net.`,
   }
 }

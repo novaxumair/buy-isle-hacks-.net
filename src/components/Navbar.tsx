@@ -9,7 +9,7 @@ import { isActiveRoute, normalizePath } from '../lib/paths'
 const NAV_LINKS = [
   { label: 'Blog', to: '/blog' },
   { label: 'Forums', to: '/forums' },
-  { label: 'Product', to: '/dota-2-cheats' },
+  { label: 'Product', to: '/the-isle-cheats' },
   { label: 'Status', to: '/status' },
   { label: 'Reviews', to: '/reviews' },
   { label: 'FAQ', to: '/faq' },
@@ -76,7 +76,7 @@ function MobileNavLayers({
         </div>
         <div className="mt-auto px-5 pb-[max(2.5rem,env(safe-area-inset-bottom))]">
           <CheckoutLink
-            aria-label="Get Dota 2 Cheats — open checkout"
+            aria-label="Get The Isle Hacks — open checkout"
             data-mobile-nav-close
             className="cta-gradient block w-full rounded-full px-6 py-3 text-center text-sm font-semibold text-white"
           >
@@ -135,7 +135,7 @@ export function Navbar({ onVideo: _onVideo = false, currentPath }: NavbarProps) 
             })}
           </div>
           <CheckoutLink
-            aria-label="Get Dota 2 Cheats — open checkout"
+            aria-label="Get The Isle Hacks — open checkout"
             className="cta-gradient flex items-center self-stretch rounded-full px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             Get

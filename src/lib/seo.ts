@@ -14,7 +14,7 @@ import {
 } from '../data/site'
 import { getReviewsAggregate, REVIEWS } from '../data/reviews'
 import type { GameStatus } from '../data/games'
-import { D2_HOME_VIDEO, PAGE_MEDIA } from '../data/media'
+import { ISLE_HOME_VIDEO, PAGE_MEDIA } from '../data/media'
 
 export const PRODUCT_ID = `${SITE_URL}/#product`
 
@@ -63,7 +63,7 @@ export function siteIdentityGraph() {
       inLanguage: 'en',
       about: {
         '@type': 'Thing',
-        name: 'Dota 2 Cheats',
+        name: 'The Isle Hacks',
         description: SITE_PURPOSE,
       },
       publisher: { '@id': `${SITE_URL}/#organization` },
@@ -84,7 +84,7 @@ export function webPageNode(seo: PageSeo) {
     inLanguage: 'en',
   } as Record<string, unknown>
   const hasVisibleImage =
-    ['/', '/dota-2-cheats', '/blog', '/forums'].includes(seo.path) ||
+    ['/', '/the-isle-cheats', '/blog', '/forums'].includes(seo.path) ||
     seo.path.startsWith('/forums/') ||
     seo.path.startsWith('/blog/')
   const hasOgImage = Boolean(seo.image)
@@ -105,12 +105,12 @@ export function productCoreJsonLd() {
   return {
     '@type': 'Product',
     '@id': PRODUCT_ID,
-    name: 'Dota 2 Cheats',
-    alternateName: ['Dota 2 Cheats', 'dota 2 cheats'],
+    name: 'The Isle Hacks',
+    alternateName: ['The Isle Hacks', 'the isle cheats'],
     description: PRODUCT_SCHEMA_DESCRIPTION,
-    url: `${SITE_URL}/dota-2-cheats`,
+    url: `${SITE_URL}/the-isle-cheats`,
     image: [
-      absoluteAsset('/og/dota-2-cheats.jpg'),
+      absoluteAsset('/og/the-isle-cheats.jpg'),
       absoluteAsset('/og/home.jpg'),
       absoluteAsset(PAGE_MEDIA.product.image),
       absoluteAsset(PAGE_MEDIA.home.image),
@@ -118,13 +118,13 @@ export function productCoreJsonLd() {
     brand: { '@type': 'Brand', name: SITE_NAME },
     manufacturer: { '@id': `${SITE_URL}/#organization` },
     category: 'PC game software',
-    offers: baseOffer(`${SITE_URL}/dota-2-cheats`, 'https://schema.org/InStock'),
+    offers: baseOffer(`${SITE_URL}/the-isle-cheats`, 'https://schema.org/InStock'),
     subjectOf: {
       '@type': 'VideoObject',
-      name: D2_HOME_VIDEO.title,
-      description: D2_HOME_VIDEO.caption,
-      thumbnailUrl: absoluteAsset(D2_HOME_VIDEO.poster),
-      contentUrl: absoluteAsset(D2_HOME_VIDEO.src),
+      name: ISLE_HOME_VIDEO.title,
+      description: ISLE_HOME_VIDEO.caption,
+      thumbnailUrl: absoluteAsset(ISLE_HOME_VIDEO.poster),
+      contentUrl: absoluteAsset(ISLE_HOME_VIDEO.src),
       uploadDate: '2026-09-16',
       inLanguage: 'en',
     },
@@ -136,12 +136,12 @@ export function productDetailJsonLd(status: GameStatus) {
     status === 'Active' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'
   return {
     ...productCoreJsonLd(),
-    url: `${SITE_URL}/dota-2-cheats`,
+    url: `${SITE_URL}/the-isle-cheats`,
     image: absoluteAsset(PAGE_MEDIA.product.image),
     about: {
       '@type': 'VideoGame',
-      name: 'Dota 2',
-      alternateName: ['Dota 2'],
+      name: 'The Isle',
+      alternateName: ['The Isle'],
       gamePlatform: 'PC',
     },
     additionalProperty: [
@@ -149,17 +149,17 @@ export function productDetailJsonLd(status: GameStatus) {
       {
         '@type': 'PropertyValue',
         name: 'Features',
-        value: 'Hero ESP, map hack, cooldown tracker, creep/rune timers, last-hit helper, ward ESP',
+        value: 'Player, NPC, and animal ESP, growth, stamina, health, corpse, water, fruit, fullbright',
       },
       {
         '@type': 'PropertyValue',
         name: 'Clients',
-        value: 'Steam',
+        value: 'Isle Evrima',
       },
-      { '@type': 'PropertyValue', name: 'Anti-cheat', value: 'Valve Anti-Cheat (VAC)' },
+      { '@type': 'PropertyValue', name: 'Anti-cheat', value: 'Easy Anti-Cheat (EAC)' },
       { '@type': 'PropertyValue', name: 'Status', value: status },
     ],
-    offers: baseOffer(`${SITE_URL}/dota-2-cheats`, availability),
+    offers: baseOffer(`${SITE_URL}/the-isle-cheats`, availability),
   }
 }
 
@@ -167,7 +167,7 @@ export function productReviewsJsonLd() {
   const aggregate = getReviewsAggregate()
   return {
     ...productCoreJsonLd(),
-    url: `${SITE_URL}/dota-2-cheats`,
+    url: `${SITE_URL}/the-isle-cheats`,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: aggregate.ratingValue,

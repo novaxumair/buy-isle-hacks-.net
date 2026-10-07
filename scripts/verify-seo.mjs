@@ -3,7 +3,7 @@ import { join, relative } from 'node:path'
 
 const root = join(import.meta.dirname, '..')
 const dist = join(root, 'dist')
-const site = 'https://buydota2cheats.com'
+const site = 'https://buyislehacks.net'
 const failures = []
 
 function fail(message) {
@@ -73,27 +73,31 @@ for (const file of files) {
 }
 
 const home = readFileSync(join(dist, 'index.html'), 'utf8')
-const product = readFileSync(join(dist, 'dota-2-cheats', 'index.html'), 'utf8')
+const product = readFileSync(join(dist, 'the-isle-cheats', 'index.html'), 'utf8')
 const reviews = readFileSync(join(dist, 'reviews', 'index.html'), 'utf8')
 const faq = readFileSync(join(dist, 'faq', 'index.html'), 'utf8')
 const support = readFileSync(join(dist, 'support', 'index.html'), 'utf8')
 const forums = readFileSync(join(dist, 'forums', 'index.html'), 'utf8')
 const siteTs = readFileSync(join(root, 'src', 'data', 'site.ts'), 'utf8')
 
-if (!home.includes('Dota 2 Cheats | ESP, Map Hack &')) {
+if (!home.includes('The Isle Hacks | ESP, Growth & Stamina Cheats')) {
   fail('Homepage does not own the exact title')
 }
-if (!product.includes('<title>Dota 2 Cheats Store</title>')) {
+const blogIndex = readFileSync(join(dist, 'blog', 'index.html'), 'utf8')
+if (!blogIndex.includes('<title>The Isle Intel | The isle hacks guides</title>')) {
+  fail('Blog index title must match SEO.blog')
+}
+if (!product.includes('<title>The Isle Store | The Isle Hacks</title>')) {
   fail('Product page title must match SEO.product')
 }
-if (!forums.includes('<title>Dota 2 Cheats Forums | Community Threads</title>')) {
+if (!forums.includes('<title>The Isle Hacks Forums | The isle hacks threads</title>')) {
   fail('Forums index title must match SEO.forums')
 }
-if (!siteTs.includes('Dota 2 ESP')) {
-  fail('SITE_ABOUT must include Dota 2 ESP (6-term cap)')
+if (!siteTs.includes('The Isle ESP')) {
+  fail('SITE_ABOUT must include The Isle ESP (6-term cap)')
 }
-if (!siteTs.includes('buydota2cheats.com')) {
-  fail('ORGANIZATION_ALTERNATE_NAMES must include buydota2cheats.com')
+if (!siteTs.includes('buyislehacks.net')) {
+  fail('ORGANIZATION_ALTERNATE_NAMES must include buyislehacks.net')
 }
 if (/name="keywords"/.test(home + product + forums)) {
   fail('Pages must not use meta keywords')
@@ -101,7 +105,7 @@ if (/name="keywords"/.test(home + product + forums)) {
 const purposeMatch = siteTs.match(/export const SITE_PURPOSE =\s*\n\s*'([^']+)'/)
 const sitePurpose = purposeMatch?.[1] ?? ''
 if (!sitePurpose.includes('does not sell cheats for other games')) {
-  fail('SITE_PURPOSE must state single-game Dota 2 focus')
+  fail('SITE_PURPOSE must state single-game The Isle focus')
 }
 if ((siteTs.match(/SITE_ABOUT = \[[\s\S]*?\] as const/)?.[0].match(/'/g) || []).length !== 12) {
   fail('SITE_ABOUT must contain exactly 6 terms')
@@ -124,7 +128,7 @@ for (const [name, html] of [
   ['product', product],
   ['reviews', reviews],
 ]) {
-  if (!html.includes('"@id":"https://buydota2cheats.com/#product"')) {
+  if (!html.includes('"@id":"https://buyislehacks.net/#product"')) {
     fail(`${name}: missing shared Product ID`)
   }
 }
@@ -165,8 +169,8 @@ for (const file of files) {
   const twImage = html.match(/<meta name="twitter:image" content="([^"]+)"/)?.[1]
   const robotsMeta = html.match(/<meta name="robots" content="([^"]+)"/)?.[1]
 
-  if (!ogImage?.startsWith('https://buydota2cheats.com/og/') || !ogImage.endsWith('.jpg')) {
-    fail(`${page}: og:image must be https://buydota2cheats.com/og/*.jpg for SERP thumbnails`)
+  if (!ogImage?.startsWith('https://buyislehacks.net/og/') || !ogImage.endsWith('.jpg')) {
+    fail(`${page}: og:image must be https://buyislehacks.net/og/*.jpg for SERP thumbnails`)
   }
   if (!twImage || twImage !== ogImage) {
     fail(`${page}: twitter:image must match og:image`)
@@ -190,8 +194,8 @@ for (const [name, html] of [
   ['home', home],
   ['product', product],
 ]) {
-  if (!html.includes('/media/d2-') && !html.includes('/videos/hero.webm')) {
-    fail(`${name}: missing visible Dota 2 media in page body`)
+  if (!html.includes('/media/isle-') && !html.includes('/videos/hero.webm')) {
+    fail(`${name}: missing visible The Isle media in page body`)
   }
 }
 if (!forums.includes('/og/forums.jpg')) {
@@ -206,7 +210,7 @@ for (const [name, html, og] of [
     fail(`${name}: missing Open Graph image ${og}`)
   }
 }
-if (!product.includes('preview-marquee-track') || !product.includes('/media/d2-screenshot-1.webp')) {
+if (!product.includes('preview-marquee-track') || !product.includes('/media/isle-screenshot-1.webp')) {
   fail('Product page is missing the gameplay preview image carousel')
 }
 if (home.includes('iframe.mediadelivery.net') || product.includes('iframe.mediadelivery.net')) {
@@ -223,8 +227,8 @@ if (
 const sitemap = readFileSync(join(dist, 'sitemap.xml'), 'utf8')
 if (sitemap.includes('<sitemapindex')) fail('sitemap.xml must be a single urlset, not an index')
 if (/forums\/(instructions|how-to-load)/.test(sitemap)) fail('Retired forum remains in sitemap.xml')
-if (!sitemap.includes('https://buydota2cheats.com/')) {
-  fail('sitemap.xml must use https://buydota2cheats.com URLs')
+if (!sitemap.includes('https://buyislehacks.net/')) {
+  fail('sitemap.xml must use https://buyislehacks.net URLs')
 }
 if (sitemap.includes('xmlns:video=') || sitemap.includes('<video:')) {
   fail('sitemap must not use video extension (GSC read errors)')
@@ -283,8 +287,8 @@ for (const stale of [
 if (!existsSync(join(dist, 'sitemap-index.xml'))) fail('dist/sitemap-index.xml is missing')
 const sitemapIndex = readFileSync(join(dist, 'sitemap-index.xml'), 'utf8')
 if (!sitemapIndex.includes('<sitemapindex')) fail('sitemap-index.xml must be a sitemap index')
-if (!sitemapIndex.includes('https://buydota2cheats.com/sitemap.xml')) {
-  fail('sitemap-index.xml must point at https://buydota2cheats.com/sitemap.xml')
+if (!sitemapIndex.includes('https://buyislehacks.net/sitemap.xml')) {
+  fail('sitemap-index.xml must point at https://buyislehacks.net/sitemap.xml')
 }
 
 if (!existsSync(join(dist, 'sitemap.xml'))) fail('dist/sitemap.xml is missing')
@@ -300,8 +304,8 @@ if (existsSync(join(dist, '_routes.json'))) {
 }
 
 const robots = readFileSync(join(dist, 'robots.txt'), 'utf8')
-if (!robots.includes('Sitemap: https://buydota2cheats.com/sitemap-index.xml')) {
-  fail('robots.txt must point at https://buydota2cheats.com/sitemap-index.xml')
+if (!robots.includes('Sitemap: https://buyislehacks.net/sitemap-index.xml')) {
+  fail('robots.txt must point at https://buyislehacks.net/sitemap-index.xml')
 }
 if (!robots.includes('Allow: /sitemap')) {
   fail('robots.txt must explicitly allow /sitemap')
@@ -336,17 +340,17 @@ for (const fn of ['functions/sitemap.js', 'functions/sitemap.xml.js']) {
 
 for (const asset of [
   'public/og/home.jpg',
-  'public/og/dota-2-cheats.jpg',
+  'public/og/the-isle-cheats.jpg',
   'public/og/blog.jpg',
   'public/og/forums.jpg',
   'public/og/reviews.jpg',
   'public/og/faq.jpg',
   'public/og/support.jpg',
-  'public/media/d2-hero-full.webp',
-  'public/media/d2-cover.webp',
-  'public/media/d2-menu.webp',
-  'public/media/d2-video-thumb.jpg',
-  'public/media/d2-screenshot-1.webp',
+  'public/media/isle-hero-full.webp',
+  'public/media/isle-cover.webp',
+  'public/media/isle-menu.webp',
+  'public/media/isle-video-thumb.jpg',
+  'public/media/isle-screenshot-1.webp',
   'public/videos/hero.webm',
   'public/sitemap.css',
 ]) {
@@ -363,14 +367,14 @@ if (!redirects.includes('/sitemap-pages.xml')) {
 if (/^\/sitemap-index\.xml\s+\/sitemap\s+301/m.test(redirects)) {
   fail('_redirects must not redirect /sitemap-index.xml (GSC needs the index file)')
 }
-if (!redirects.includes('/buy-dota2-cheats')) {
-  fail('_redirects must map buy-dota2-cheats keyword alias')
+if (!redirects.includes('/buy-isle-cheats')) {
+  fail('_redirects must map buy-isle-cheats keyword alias')
 }
 if (!redirects.includes('/abi-cheats')) {
-  fail('_redirects must map legacy /abi-cheats to /dota-2-cheats')
+  fail('_redirects must map legacy /abi-cheats to /the-isle-cheats')
 }
 if (!redirects.includes('/wardogs-cheats')) {
-  fail('_redirects must map legacy /wardogs-cheats to /dota-2-cheats')
+  fail('_redirects must map legacy /wardogs-cheats to /the-isle-cheats')
 }
 
 const worker = readFileSync(join(root, 'workers', 'site.js'), 'utf8')

@@ -2,7 +2,6 @@
 @import '@fontsource/cinzel/latin-500.css';
 @import '@fontsource/cinzel/latin-600.css';
 @import '@fontsource/cinzel/latin-700.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,8 +23,8 @@
   --success: #c084fc;
   --glow: rgba(176, 64, 251, 0.35);
   --glow-soft: rgba(167, 139, 250, 0.12);
-  /** Dota 2 wordmark red (matches navbar logo) */
-  --dota-red: #ff0000;
+  /** The Isle wordmark red (matches navbar logo) */
+  --isle-accent: #6ee7a8;
 }
 
 html {
@@ -49,9 +48,10 @@ body::-webkit-scrollbar {
 
 body {
   margin: 0;
-  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-family: 'Cinzel', 'Times New Roman', Georgia, serif;
   font-synthesis: none;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,21 +66,30 @@ body {
 }
 
 @layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Cinzel', 'Times New Roman', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+
   h1 {
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.18em;
   }
 
   h2,
   h3 {
-    font-weight: 600;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.1em;
   }
 }
 
 @layer components {
-  .text-dota-red {
-    color: var(--dota-red);
+  .text-isle-accent {
+    color: var(--isle-accent);
   }
 
   /* Keep mobile menu toggle above hero copy and cards */
@@ -543,24 +552,24 @@ body {
 
 
 .hero-video-tint {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(176, 64, 251, 0.18) 0%,
-      rgba(124, 58, 237, 0.1) 45%,
-      rgba(8, 6, 15, 0.45) 100%
-    ),
-    radial-gradient(ellipse 90% 70% at 50% 20%, rgba(167, 139, 250, 0.16), transparent 65%);
-  mix-blend-mode: soft-light;
-  opacity: 0.7;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 6, 15, 0.08) 0%,
+    rgba(8, 6, 15, 0.22) 55%,
+    rgba(8, 6, 15, 0.38) 100%
+  );
+  mix-blend-mode: normal;
+  opacity: 1;
 }
 
 .hero-video-tint-glow {
-  background:
-    radial-gradient(ellipse 80% 50% at 20% 30%, rgba(176, 64, 251, 0.18), transparent 55%),
-    radial-gradient(ellipse 60% 45% at 85% 60%, rgba(124, 58, 237, 0.14), transparent 50%);
+  background: radial-gradient(
+    ellipse 85% 55% at 50% 18%,
+    rgba(124, 58, 237, 0.07),
+    transparent 62%
+  );
   mix-blend-mode: soft-light;
-  opacity: 0.55;
+  opacity: 0.35;
 }
 
 .hero-video-bg::-webkit-media-controls,

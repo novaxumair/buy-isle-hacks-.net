@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { getGameImage, getImageAlt, getImageTitle, getProductHeroImage } from '../data/images'
+import { ISLE_IGN_COVER } from '../data/media'
 
 type GameCoverProps = {
   slug: string
@@ -34,13 +35,19 @@ export function GameCover({
   variant = 'catalog',
   priority = false,
 }: GameCoverProps) {
-  const sources = useMemo(
-    () =>
-      candidatesFor(
-        variant === 'product' ? getProductHeroImage(slug) : getGameImage(slug),
-      ),
-    [slug, variant],
-  )
+  const sources = useMemo(() => {
+    const primary =
+      variant === 'product' ? getProductHeroImage(slug) : getGameImage(slug)
+    const list = candidatesFor(primary)
+    if (variant === 'product') {
+      for (const extra of [ISLE_IGN_COVER, '/brand/isle-ign-cover.jpg']) {
+        for (const u of candidatesFor(extra)) {
+          if (!list.includes(u)) list.push(u)
+        }
+      }
+    }
+    return list
+  }, [slug, variant])
   const [index, setIndex] = useState(0)
   const [failed, setFailed] = useState(false)
 

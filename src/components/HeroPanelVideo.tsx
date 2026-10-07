@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { D2_HOME_VIDEO } from '../data/media'
+import { ISLE_HOME_VIDEO } from '../data/media'
 
 type HeroPanelVideoProps = {
   variant?: 'home' | 'forums'
@@ -82,9 +82,9 @@ export function HeroPanelVideo({ variant = 'home' }: HeroPanelVideoProps) {
         loop
         playsInline
         preload="auto"
-        aria-label={D2_HOME_VIDEO.title}
+        aria-label={ISLE_HOME_VIDEO.title}
       >
-        <source src={D2_HOME_VIDEO.src} type="video/webm" />
+        <source src={ISLE_HOME_VIDEO.src} type="video/webm" />
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
       <div className="hero-video-tint pointer-events-none absolute inset-0 z-[2]" />

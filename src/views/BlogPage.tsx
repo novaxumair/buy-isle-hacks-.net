@@ -36,12 +36,15 @@ export function BlogPage({ initialQuery = '' }: BlogPageProps) {
       <ListingPageHero
         currentPath="/blog"
         eyebrow={<>Guides · Features · {SITE_HOST}</>}
-        title="Dota 2 Cheats Blog"
+        title="The Isle Intel"
         description={
           <>
-            Long-form articles on dota 2 cheats, console commands, lobby practice, feature deep
-            dives, and 2026 comparisons — no comment threads here; visit{' '}
-            <a href="/forums">forums</a> for discussion.
+            The Isle intel hub for the isle cheats — wallhack WH, Evrima ESP, growth and stamina,
+            undetected EAC notes, and how to buy on {SITE_HOST}. Visit{' '}
+            <a href="/forums" className="text-white/80 underline-offset-2 hover:underline">
+              forums
+            </a>{' '}
+            for loader threads.
           </>
         }
       />
@@ -56,15 +59,15 @@ export function BlogPage({ initialQuery = '' }: BlogPageProps) {
                 <p className="text-xs uppercase tracking-wider text-white/45">Product</p>
                 <h2 className="mt-1 text-xl font-semibold text-white">{SITE_NAME}</h2>
                 <p className="mt-2 max-w-xl text-sm text-white/55">
-                  Hero ESP, map hack, timers, and 24/7 support — monthly ${'35'} or lifetime $
-                  {'150'} when loader status is Active.
+                  Player ESP, growth, stamina, water and fruit overlays, and Discord support —
+                  monthly ${'35'} or lifetime ${'150'} when loader status is Active.
                 </p>
               </div>
               <a
-                href={guidePath('dota-2')}
+                href={guidePath('the-isle')}
                 className="cta-gradient inline-flex shrink-0 items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white"
               >
-                Dota 2 store
+                The Isle store
               </a>
             </div>
 

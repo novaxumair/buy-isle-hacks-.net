@@ -2,28 +2,28 @@ export type FaqItem = { q: string; a: string }
 
 export const HOME_FAQS: FaqItem[] = [
   {
-    q: 'What are Dota 2 cheats?',
-    a: 'Dota 2 cheats on buydota2cheats.com are Windows PC tools with hero ESP, map hack, cooldown tracker, creep and rune timers, last-hit helper, ward ESP, roshan timer, and enemy inventory ESP — with Active or Updating loader status after Valve patches.',
+    q: 'What are The Isle cheats?',
+    a: 'The Isle cheats on buyislehacks.net are Windows PC tools with player, NPC, and animal ESP, growth and stamina readouts, corpse and resource overlays, fullbright, and custom menu keys — with Active or Updating loader status after EAC and game patches.',
   },
   {
-    q: 'How much do Dota 2 cheats cost?',
-    a: 'Dota 2 cheats start at $35 for monthly access (30 days). Lifetime access is $150. Confirm Active status and pricing on buydota2cheats.com before checkout.',
+    q: 'How much do The Isle cheats cost?',
+    a: 'The Isle cheats start at $35 for monthly access (30 days, plan id mon). Lifetime access is $150 (plan id lifetime). Confirm Active status and pricing on buyislehacks.net before checkout.',
   },
   {
     q: 'Do you sell tools for other games?',
-    a: 'No. buydota2cheats.com covers Dota 2 only — one product, no multi-game catalog.',
+    a: 'No. buyislehacks.net covers The Isle only — one product, no multi-game catalog.',
   },
   {
-    q: 'Is map hack required?',
-    a: 'Map hack is optional. Many players lead with hero ESP and timers first — then tune fog removal opacity so the overlay stays readable in teamfights.',
+    q: 'Is full map vision included?',
+    a: 'The Isle hacks focus on survival ESP — players, animals, corpses, water, fruit, and stat trackers. Tune max distance and visible checks so overlays stay readable on busy Evrima servers.',
   },
   {
     q: 'How do you handle game patches?',
-    a: 'We publish Active or Updating labels after Dota 2 updates. Valve Anti-Cheat (VAC) and game builds change — always check status on buydota2cheats.com before you load.',
+    a: 'We publish Active or Updating labels after The Isle updates. Easy Anti-Cheat (EAC) and game builds change — always check status on buyislehacks.net before you load.',
   },
   {
-    q: 'What is hero ESP?',
-    a: 'Hero ESP shows enemy heroes with item readouts, level tags, and positioning intel so you can track power spikes and rotations before engagements.',
+    q: 'What is player ESP?',
+    a: 'Player ESP shows other survivors with box, snapline, name, distance, species, health, stamina, growth, and direction intel so you can read threats before engagements.',
   },
 ]
 
@@ -31,31 +31,31 @@ export const PRODUCT_PAGE_FAQS: FaqItem[] = [
   ...HOME_FAQS,
   {
     q: 'Which features are included?',
-    a: 'Hero ESP with items and level, full map hack (fog removal), ability cooldown tracker, creep spawn timers, rune spawn indicators, last hit prediction helper, auto-dodge skillshots, ward placement ESP, roshan timer, enemy inventory ESP, performance optimized overlays, and 24/7 support on Windows PC.',
+    a: 'Visual options include player, NPC, and animal ESP, box, snapline, name, distance, corpse, health, stamina, growth, species, player direction, head dot, visible check, gore, fruit, water, and max distance. Misc options include crosshair, suicide, fullbright, show FPS, show resolution, show time, custom menu key, custom panic key, and custom ESP colors on Windows PC.',
   },
   {
-    q: 'Do Dota 2 cheats work on Steam?',
-    a: 'Yes. The loader supports Dota 2 on Steam for Windows PC when status is Active.',
+    q: 'Do The Isle cheats work on Evrima?',
+    a: 'Yes. The loader targets Isle Evrima on Windows PC when status is Active.',
   },
   {
     q: 'How do I get access?',
-    a: 'Start on the homepage, review features and Active status, open the Dota 2 store page, then continue to checkout for digital delivery.',
+    a: 'Start on the homepage, review features and Active status, open The Isle store page, then continue to checkout for instant digital delivery.',
   },
   {
-    q: 'How do I load Dota 2 cheats?',
-    a: 'Follow the complete setup forum thread: exclusions, launch Dota 2, run the loader, configure hero ESP and timers, save a profile. Re-check status after every patch.',
+    q: 'How do I load The Isle cheats?',
+    a: 'Follow the complete setup forum thread: exclusions, launch The Isle, run the loader, configure player ESP and stat overlays, save a profile. Re-check status after every patch.',
   },
   {
     q: 'Where do I get support?',
-    a: 'Use the Support page and channels linked after purchase. Include current status and whether you need load, menu, or delivery help.',
+    a: 'Use the Support page and Discord channels linked after purchase. Include current status and whether you need load, menu, or delivery help.',
   },
   {
     q: 'Where can I read reviews?',
-    a: 'Visit the Reviews page for buyer feedback on ESP clarity, map vision, timers, and loader updates.',
+    a: 'Visit the Reviews page for buyer feedback on ESP clarity, growth and stamina trackers, and loader updates.',
   },
   {
-    q: 'Is this the official Dota 2 site?',
-    a: 'No. We cover third-party software for Dota 2 only. Buy and play the game from Valve on Steam. We are not affiliated with Valve Corporation.',
+    q: 'Is this the official The Isle site?',
+    a: 'No. We cover third-party software for The Isle only. Buy and play the game from the official Steam page. We are not affiliated with the game developer.',
   },
 ]
 

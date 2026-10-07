@@ -15,13 +15,23 @@ export default {
           soft: '#a78bfa',
           deep: '#7c3aed',
           success: '#c084fc',
-          /** Matches Dota 2 wordmark red in navbar logo */
-          'dota-red': '#ff0000',
+          /** Matches The Isle wordmark red in navbar logo */
+          'isle-accent': '#ff0000',
         },
       },
       fontFamily: {
-        sans: ['Cinzel', 'Times New Roman', 'serif'],
-        display: ['Cinzel', 'Times New Roman', 'serif'],
+        /** Body — readable Cinzel */
+        sans: ['Cinzel', 'Times New Roman', 'Georgia', 'serif'],
+        display: ['Cinzel', 'Times New Roman', 'Georgia', 'serif'],
+      },
+      letterSpacing: {
+        /** Site-wide: Isle-style wide caps (overrides default tight tracking) */
+        tighter: '0.04em',
+        tight: '0.1em',
+        normal: '0.06em',
+        wide: '0.14em',
+        wider: '0.2em',
+        widest: '0.32em',
       },
     },
   },

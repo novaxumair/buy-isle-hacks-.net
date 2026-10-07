@@ -3,7 +3,7 @@
  */
 
 export const OG_HOME = '/og/home.jpg'
-export const OG_PRODUCT = '/og/dota-2-cheats.jpg'
+export const OG_PRODUCT = '/og/the-isle-cheats.jpg'
 export const OG_FORUMS = '/og/forums.jpg'
 export const OG_BLOG = '/og/blog.jpg'
 export const OG_REVIEWS = '/og/reviews.jpg'
@@ -26,7 +26,7 @@ export function blogOgImage(slug: string) {
 
 export function getOgImageForPath(path?: string): string {
   if (!path || path === '/') return OG_HOME
-  if (path === '/dota-2-cheats' || path === '/buy-dota2-cheats') return OG_PRODUCT
+  if (path === '/the-isle-cheats' || path === '/buy-isle-cheats') return OG_PRODUCT
   if (path === '/blog') return OG_BLOG
   if (path.startsWith('/blog/')) {
     const slug = path.slice('/blog/'.length).replace(/\/$/, '')

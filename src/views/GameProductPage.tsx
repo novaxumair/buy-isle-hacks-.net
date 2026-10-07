@@ -22,12 +22,12 @@ import { FaqSection } from '../components/FaqSection'
 import { CheckoutLink } from '../components/CheckoutLink'
 import { NotFoundPage } from './NotFoundPage'
 import { forumPath } from '../data/blog-paths'
-import { D2_HOME_VIDEO } from '../data/media'
+import { ISLE_HOME_VIDEO } from '../data/media'
 
 function ProductPurchaseCard({ game }: { game: Game }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-z-soft/15 bg-[rgba(20,16,31,0.95)] sm:rounded-3xl">
-      <CheckoutLink className="block" aria-label="View Dota 2 Cheats plans">
+      <CheckoutLink className="block" aria-label="View The Isle Hacks plans">
         <GameCover
           slug={game.slug}
           name={game.name}
@@ -38,9 +38,28 @@ function ProductPurchaseCard({ game }: { game: Game }) {
       </CheckoutLink>
       <div className="p-5 sm:p-6">
         <div className="flex items-center gap-3">
-          <div className="icon-well shrink-0 text-sm font-bold">D2</div>
+          <img
+            src="/brand/isle-ign-cover.jpg"
+            alt=""
+            width={44}
+            height={44}
+            className="h-11 w-11 shrink-0 rounded-lg object-cover ring-1 ring-white/10"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-white">Dota 2</p>
+            <p className="truncate text-sm font-semibold text-white">The Isle</p>
+            <p className="truncate text-[10px] uppercase tracking-wide text-white/35">
+              Game art via{' '}
+              <a
+                href="https://www.ign.com/games/the-isle"
+                className="text-white/50 underline-offset-2 hover:text-white/70 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                IGN
+              </a>
+            </p>
             <p className="text-xs text-white/45">
               {game.status} · ${PRODUCT_PRICE_USD} monthly · ${PRODUCT_LIFETIME_PRICE_USD} lifetime
             </p>
@@ -82,7 +101,7 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
   return (
     <div className="content-surface min-h-screen overflow-x-hidden text-white">
       <div className="content-surface-nav">
-        <Navbar currentPath="/dota-2-cheats" />
+        <Navbar currentPath="/the-isle-cheats" />
       </div>
 
       <main>
@@ -102,16 +121,16 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
             <div className="mt-6 text-center lg:mt-8">
               <span className="inline-flex items-center gap-1.5 text-xs text-z-soft">
                 <Shield className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
-                {game.status} · Valve Anti-Cheat (VAC) · Steam · Windows PC · {SITE_HOST}
+                {game.status} · Easy Anti-Cheat (EAC) · Evrima · Windows PC · {SITE_HOST}
               </span>
 
               <h1 className="mx-auto mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
-                Dota 2 Cheats Store
+                The Isle Store
               </h1>
               <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/55 sm:mt-4 sm:text-base">
-                Premium Dota 2 cheats — hero ESP, full map hack, cooldown tracker, creep and rune
-                timers, last-hit helper, auto-dodge, ward ESP, roshan timer, and enemy inventory
-                ESP. Monthly $35 and lifetime $150 with instant delivery when status is Active.
+                The Isle hacks and Isle Evrima cheats — player, NPC, and animal ESP, growth and
+                stamina readouts, corpse and resource overlays, fullbright, and custom menu keys.
+                Monthly $35 and lifetime $150 with instant delivery when status is Active.
               </p>
             </div>
 
@@ -167,10 +186,10 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
                       Platforms & patches
                     </h2>
                     <p className="mt-3">
-                      Runs on Dota 2 via Steam when loader status is Active. After a Dota 2 or VAC
-                      update, status may show Updating until tested — {SITE_NAME}{' '}
-                      publishes Active labels so you are not loading a mismatched build. Status
-                      first, then queue.
+                      Runs on Isle Evrima on Windows PC when loader status is Active. After a The Isle
+                      or EAC update, status may show Updating until tested — {SITE_NAME}{' '}
+                      publishes Active labels so you are not loading a mismatched build. Check status
+                      before you join a server.
                     </p>
                   </div>
 
@@ -215,10 +234,10 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
               id="gameplay-preview-heading"
               className="text-lg font-semibold tracking-tight text-white sm:text-xl"
             >
-              Dota 2 preview
+              The Isle preview
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-sm text-white/45">
-              {D2_HOME_VIDEO.caption} Hover to slow the scroll — click any shot to zoom in.
+              {ISLE_HOME_VIDEO.caption} Hover to slow the scroll — click any shot to zoom in.
             </p>
           </div>
           <div className="relative left-1/2 mt-6 w-screen max-w-[100vw] -translate-x-1/2 sm:mt-8">
@@ -227,13 +246,13 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
         </section>
 
         <FaqSection
-          heading="Dota 2 cheats FAQ"
+          heading="The Isle cheats FAQ"
           intro="Status, features, platforms, delivery, and load questions before checkout."
           items={PRODUCT_PAGE_FAQS}
         />
       </main>
 
-      <SiteFooter currentPath="/dota-2-cheats" />
+      <SiteFooter currentPath="/the-isle-cheats" />
     </div>
   )
 }

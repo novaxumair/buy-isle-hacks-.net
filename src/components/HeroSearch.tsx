@@ -30,7 +30,7 @@ export function HeroSearch({
   value,
   onChange,
   submitTo = 'forums',
-  placeholder = 'Search Dota 2 forum threads…',
+  placeholder = 'Search The Isle forum threads…',
   autoFocus = false,
   className = '',
 }: HeroSearchProps) {

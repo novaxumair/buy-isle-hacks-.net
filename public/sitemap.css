@@ -4,7 +4,8 @@
 
 :root {
   color-scheme: dark;
-  font-family: Cinzel, "Times New Roman", serif;
+  font-family: Cinzel, "Times New Roman", Georgia, serif;
+  letter-spacing: 0.08em;
   background: #0d1117;
   color: #e6edf3;
   font-size: 15px;
@@ -19,7 +20,7 @@ sitemap|urlset {
 }
 
 sitemap|urlset::before {
-  content: "Dota 2 Cheats — Site Map (XML)\A All indexable pages for Google Search Console: https://buydota2cheats.com\A\A Crawlers should use /sitemap.xml or /sitemap. This styled view is for people only. Each row is one public page on this site (Dota 2 Cheats only).";
+  content: "The Isle Hacks — Site Map (XML)\A All indexable pages for Google Search Console: https://buyislehacks.net\A\A Crawlers should use /sitemap.xml or /sitemap. This styled view is for people only. Each row is one public page on this site (The Isle Hacks only).";
   display: block;
   white-space: pre-wrap;
   margin-bottom: 24px;
