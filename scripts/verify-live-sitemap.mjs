@@ -80,7 +80,9 @@ try {
   const primary = await check('sitemap', CANONICAL)
   await check('sitemap.xml', ALIAS)
   console.log(`Live sitemap OK: ${primary.locCount} URLs, ${primary.bytes} bytes (${CANONICAL} + ${ALIAS}, both HTTP 200)`)
-  console.log('GSC (Domain property): remove failed row, submit full URL https://buyislehacks.net/sitemap.xml — not URL Inspection.')
+  console.log(
+    'GSC: remove failed rows (especially https://www.buyislehacks.net/sitemap.xml), submit https://buyislehacks.net/sitemap.xml on a buyislehacks.net property — not URL Inspection.',
+  )
 } catch (err) {
   console.error(String(err.message || err))
   process.exit(1)

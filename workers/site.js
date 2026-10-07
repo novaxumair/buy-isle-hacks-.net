@@ -109,14 +109,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
 
-    if (url.pathname === '/sitemap-index.xml') {
-      return serveSitemapIndex(env, request)
-    }
-
-    if (SITEMAP_PATHS.has(url.pathname)) {
-      return serveSitemap(env, request, url.pathname)
-    }
-
+    // Canonical host first — including /sitemap*.xml (all <loc> URLs are apex).
     if (url.protocol === 'http:') {
       url.protocol = 'https:'
       const apex = toApexUrl(url)
@@ -126,6 +119,14 @@ export default {
     const apex = toApexUrl(url)
     if (apex) {
       return Response.redirect(apex.toString(), 301)
+    }
+
+    if (url.pathname === '/sitemap-index.xml') {
+      return serveSitemapIndex(env, request)
+    }
+
+    if (SITEMAP_PATHS.has(url.pathname)) {
+      return serveSitemap(env, request, url.pathname)
     }
 
     const assetResponse = await fetchStatic(env, request, url)

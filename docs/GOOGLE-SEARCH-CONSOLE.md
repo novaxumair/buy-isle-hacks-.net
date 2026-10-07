@@ -68,6 +68,16 @@ Browser check: [https://buyislehacks.net/sitemap.xml](https://buyislehacks.net/s
 
 Google **never got an HTTP response** (different from “could not be read”, which is usually parse/format). Your browser can still open the sitemap.
 
+### 0. Wrong host (`https://www.buyislehacks.net/sitemap.xml`)
+
+If the submitted URL uses **`www`**, remove that row and submit **apex only**:
+
+```text
+https://buyislehacks.net/sitemap.xml
+```
+
+Every `<loc>` in the file is `https://buyislehacks.net/...`. A **Domain** property (`buyislehacks.net`) or URL prefix **`https://buyislehacks.net/`** matches; **`www` sitemap URLs do not**. After deploy, `www` paths **301** to apex (including `/sitemap.xml`).
+
 ### 1. Test the exact sitemap URL (not `/sitemap` alone)
 
 **URL Inspection** → paste:
