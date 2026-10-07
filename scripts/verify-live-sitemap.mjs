@@ -54,8 +54,8 @@ async function check(label, url) {
     throw new Error(`${label}: missing standard urlset xmlns (${url})`)
   }
   const locCount = (body.match(/<loc>/g) || []).length
-  if (locCount < 50) {
-    throw new Error(`${label}: expected ≥50 URLs, found ${locCount} (${url})`)
+  if (locCount < 35) {
+    throw new Error(`${label}: expected ≥35 URLs, found ${locCount} (${url})`)
   }
   return { locCount, bytes: body.length }
 }

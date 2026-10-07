@@ -66,4 +66,4 @@ Response should be **`application/xml`**, **no** `Access-Control-Allow-Origin: *
 
 ## Config file
 
-`wrangler.worker.toml` — Worker name, `[build]`, `[assets]` → `./dist`.
+`wrangler.worker.toml` — Worker name, `[assets]` → `./dist`, **`run_worker_first = true`** (so `workers/site.js` handles www→apex and sitemap headers; without it, static files bypass the Worker).

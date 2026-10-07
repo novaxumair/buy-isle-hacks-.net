@@ -128,4 +128,8 @@ After deploy, `https://www.buyislehacks.net/` must **301** to `https://buyisleha
 
 ## “Last read” date with 0 pages
 
-That is almost always an **old failed fetch**. Remove the sitemap entry and submit again with `https://buyislehacks.net/sitemap.xml`.
+Common causes:
+
+1. **Wrong Search Console property** — `https://www.buyislehacks.net/` with a sitemap whose `<loc>` URLs are all **apex** → **0 discovered pages** / “could not be read”. Use **Domain** `buyislehacks.net` or URL prefix **`https://buyislehacks.net/`**, then submit **`https://buyislehacks.net/sitemap.xml`**.
+2. **Stale failed row** — remove the sitemap in GSC and submit again after deploy (`wrangler.worker.toml` uses `run_worker_first = true` so **www → apex 301** actually runs).
+3. **WAF 403** for Googlebot on `/sitemap.xml` — see Security → Events above.

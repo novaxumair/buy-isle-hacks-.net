@@ -18,3 +18,5 @@ directory = "./dist"
 binding = "ASSETS"
 html_handling = "auto-trailing-slash"
 not_found_handling = "404-page"
+# Required so workers/site.js runs (www→apex, sitemap headers). Default is asset-first.
+run_worker_first = true
